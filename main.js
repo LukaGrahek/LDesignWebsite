@@ -12,11 +12,6 @@ function changeImage() {
     if(count < 4) count++;
     else count = 0;
 
-    document.getElementById('homeimages').src=getHomeImage(count);
+    document.getElementById('homeimages').src=homePhotos[count];
 }
 
-//returns homeImage path
-function getHomeImage(imageNum){
-    return homePhotos[imageNum];
-    
-}
