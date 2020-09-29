@@ -12,7 +12,7 @@ function changeImage() {
     if(count < 4) count++;
     else count = 0;
 
-    document.getElementById('123').src=getHomeImage(count);
+    document.getElementById('homeimages').src=getHomeImage(count);
 }
 
 //returns homeImage path

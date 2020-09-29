@@ -1,3 +1,11 @@
 html {
     scroll-behavior: smooth;
 }
+
+#homeimages {
+    width: 100%;
+}
+
+#headerbuttons {
+    position:fixed;
+}
