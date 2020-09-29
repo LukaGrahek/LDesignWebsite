@@ -15,3 +15,4 @@ function changeImage() {
     document.getElementById('homeimages').src=homePhotos[count];
 }
 
+ //   setInterval(changeImage(), 5000);
