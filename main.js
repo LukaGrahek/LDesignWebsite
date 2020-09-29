@@ -1,5 +1,5 @@
-let count = 0;
-const homePhotos = [
+let homeImageCount = 0;
+const homePhotosSRC = [
     "photos/whiteandblackkitchentabletvhouse.jpg",
     "photos/brownchairlivingroom.jpg",
     "photos/greencouchhouse.jpg",
@@ -9,10 +9,10 @@ const homePhotos = [
 
 //Changes Home Section Image on Click
 function changeImage() {
-    if(count < 4) count++;
-    else count = 0;
+    if(homeImageCount < 4) homeImageCount++;
+    else homeImageCount = 0;
 
-    document.getElementById('homeimages').src=homePhotos[count];
+    document.getElementById('homeimages').src=homePhotosSRC[homeImageCount];
 }
 
  //   setInterval(changeImage(), 5000);
