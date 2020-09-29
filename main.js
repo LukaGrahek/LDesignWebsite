@@ -1,5 +1,5 @@
 let count = 0;
-var homePhotos = [
+const homePhotos = [
     "photos/whiteandblackkitchentabletvhouse.jpg",
     "photos/brownchairlivingroom.jpg",
     "photos/greencouchhouse.jpg",
