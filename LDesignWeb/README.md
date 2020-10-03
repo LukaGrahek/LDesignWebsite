@@ -5,3 +5,6 @@ installs
 
 npm i node
 npm install -g gatsby-cli
+gatsby build
+npm run develop
+
