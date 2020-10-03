@@ -1,10 +1,15 @@
 import React from 'react'
 
+import '../styles/headerStyle.css'
+
 const Header = () => {
     return (
         <header>
-            <h1>L E D A L I T R I C I N</h1>
+            <h1 id= "clientTitle">
+                L E D A     L I T R I C I N
+            </h1>
             <ul>
+                
                 <li>
                     HOME
                 </li>
@@ -23,13 +28,13 @@ const Header = () => {
                 <li>
                     CONTACT
                 </li>
-                <li>
+                <li id="languageSelect">
                     EN
                 </li>
-                <li>
+                <li id="languageSelect">
                     |
                 </li>
-                <li>
+                <li id="languageSelect">
                     SR
                 </li>
             </ul>

@@ -9,7 +9,6 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <h1>howdy</h1>
       <HomeSlide/>
     </Layout>
   )
