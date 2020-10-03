@@ -1,10 +1,16 @@
 # LDesignWebsiteProject
-Website for Interior Designer: Leda Litricin. Grade 12 summative project bu Luka Grahek and Sasha Tsarapkine
+Website for Interior Designer: Leda Litricin. 
+Grade 12 summative project by Luka Grahek and Sasha Tsarapkine
 
-installs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+installs:
 
 npm i node
 npm install -g gatsby-cli
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+commands:
+
 gatsby build
 npm run develop
 
