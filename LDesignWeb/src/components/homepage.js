@@ -9,4 +9,4 @@ const HomeSlide = () => {
     )
 }
 
-export default HomeSlide
+export default HomeSlide 
