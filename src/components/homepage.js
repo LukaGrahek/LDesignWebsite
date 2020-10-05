@@ -3,7 +3,7 @@ import slide1 from '../photos/1bed.jpg';
 import slide2 from '../photos/2room.jpg';
 import slide3 from '../photos/3living.jpg';
 import slide4 from '../photos/4combo.png';
-import slide5 from '../photos/5room.jpg';
+//import slide5 from '../photos/5room.jpg';
 import '../styles/homepageStyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
@@ -59,7 +59,7 @@ const HomeSlide = () => {
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            {/* <Carousel.Item>
                 <img
                 className="d-block w-100"
                 src={slide5}
@@ -70,7 +70,7 @@ const HomeSlide = () => {
                 <h3>Fifth slide label</h3>
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                 </Carousel.Caption>
-            </Carousel.Item>
+            </Carousel.Item> */}
             </Carousel>
     )
 }
