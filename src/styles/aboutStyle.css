@@ -1,0 +1,22 @@
+#pic{
+    max-width: 400px;
+    max-height: 400px;
+    float: left;
+    padding-right: 1%;
+}
+
+p{
+    float: center;
+    font-size: 25px;
+    padding-left: 25%;
+    margin-right: 5%;
+}
+
+#Jtron{
+    margin-top: 50%;
+    padding-left: 5%;
+}
+
+#AboutTitle{
+    padding-bottom: 2%;
+}
