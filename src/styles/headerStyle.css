@@ -19,6 +19,7 @@ header {
 }
 
 #clientTitle {
+    margin-top: 0.9rem;
     color: #CEC9C9;
     white-space: pre;
     float:left;
@@ -39,6 +40,7 @@ ul {
 }
 
 li {
+    margin-top: 2%;
     color: #B1B1B1;
     padding-right: 2.4rem;
 }
