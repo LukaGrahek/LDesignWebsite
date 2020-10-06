@@ -1,20 +1,34 @@
 import React from 'react'
 
 import '../styles/headerStyle.css'
+import * as Scroll from 'react-scroll';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
+const scrollTop = () =>{
+    window.scrollTo({top: 0, behavior: 'smooth'});
+ };
+
+ const scrollAbout = () =>{
+    window.scrollTo({top: 1700, behavior: 'smooth'});
+ };
+
 
 const Header = () => {
     return (
-        <header>
-            <h1 id= "clientTitle">
+        <header id='Header' >
+            <h1 id= "clientTitle" onClick={scrollTop}>
                 L E D A     L I T R I C I N
             </h1>
             <ul>
-                
                 <li>
-                    HOME
+                    <Link onClick={scrollTop} >
+                        HOME
+                    </Link>
                 </li>
                 <li>
-                    ABOUT
+                    <Link onClick={scrollAbout}>
+                        ABOUT
+                    </Link>
                 </li>
                 <li>
                     SERVICES
@@ -41,5 +55,6 @@ const Header = () => {
         </header>
     )
 }
+
 
 export default Header

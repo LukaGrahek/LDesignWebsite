@@ -24,8 +24,12 @@ header {
     white-space: pre;
     float:left;
     padding-left:8rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: normal;
+}
+
+#clientTitle:hover{
+    cursor: pointer;
 }
 
 #languageSelect {
@@ -43,4 +47,9 @@ li {
     margin-top: 2%;
     color: #B1B1B1;
     padding-right: 2.4rem;
+}
+
+li:hover {
+    cursor: pointer;
+    color: white;
 }

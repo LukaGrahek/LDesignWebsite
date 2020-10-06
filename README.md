@@ -8,7 +8,7 @@ installs:
 npm i node
 npm install -g gatsby-cli
 npm install react-bootstrap bootstrap
-
+npm install react-scroll
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 commands:
 
