@@ -1,0 +1,22 @@
+
+#sTXT{
+    
+    font-size: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#Jtron2{
+    z-index: 10;
+    margin-top: 5%;
+    padding-left: 5%;
+}
+
+#AboutTitle{
+    padding-bottom: 2%;
+}
+
+#contactB{
+    margin-left: 5%;
+    background-color: dimgrey;
+}

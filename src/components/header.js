@@ -12,6 +12,10 @@ const scrollTop = () =>{
     window.scrollTo({top: 1700, behavior: 'smooth'});
  };
 
+ const scrollServices = () =>{
+    window.scrollTo({top: 2520, behavior: 'smooth'});
+ };
+
 
 const Header = () => {
     return (
@@ -31,10 +35,12 @@ const Header = () => {
                     </Link>
                 </li>
                 <li>
-                    SERVICES
+                    <Link onClick={scrollServices}>
+                        SERVICES
+                    </Link>
                 </li>
                 <li>
-                    PORTFOLIO
+                    PROJECTS
                 </li>
                 <li>
                     PROCESS
