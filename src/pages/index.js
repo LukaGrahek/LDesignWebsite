@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import HomeSlide from '../components/homepage'
 import About from '../components/about'
 
+
 import '../styles/indexStyle.css'
 
 const IndexPage = () => {
