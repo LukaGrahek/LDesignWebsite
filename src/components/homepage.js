@@ -2,7 +2,7 @@ import React from 'react';
 import slide1 from '../photos/1bed.jpg';
 import slide2 from '../photos/2room.jpg';
 import slide3 from '../photos/3living.jpg';
-import slide4 from '../photos/4combo.png';
+import slide4 from '../photos/4combo.jpg';
 //import slide5 from '../photos/5room.jpg';
 import '../styles/homepageStyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
