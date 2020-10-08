@@ -1,7 +1,7 @@
 import React from 'react';
 import pic from '../photos/clientimage.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Jumbotron,Button} from 'react-bootstrap'
+import {Jumbotron} from 'react-bootstrap'
 import '../styles/aboutStyle.css';
 const About = () => {
     return(

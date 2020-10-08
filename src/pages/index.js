@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import HomeSlide from '../components/homepage'
 import About from '../components/about'
 import Services from '../components/services'
-
+import Projects from '../components/projects'
 
 import '../styles/indexStyle.css'
 
@@ -17,6 +17,7 @@ const IndexPage = () => {
       <HomeSlide/>
       <About/>
       <Services/>
+      <Projects/>
     </Layout>
   )
 }
