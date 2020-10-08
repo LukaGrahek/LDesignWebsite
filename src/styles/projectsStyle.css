@@ -1,8 +1,8 @@
 
 
-  #AboutTitle{
+  #ProjTitle{
     padding-bottom: 2%;
-    padding-left: 3%;
+    margin-left: 2%;
 }
 
   .column {
@@ -61,7 +61,7 @@
     border:1px solid #fff;
     background-color:transparent;
     opacity:0;
-    font-size:40px;
+    font-size:25px;
     filter:alpha(opacity=0);
     -webkit-transition:all .2s ease-in-out;
     transition:all .2s ease-in-out;
