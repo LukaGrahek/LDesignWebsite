@@ -45,8 +45,7 @@ const Process = () => {
                     resenja prostora u kojima zele da zive ili koje zele da izdaju/prodaju. Oni shvataju da im je potrebna
                     profesionalna pomoc u dostizanju tog cilja a ujedno zele da izbegnu greske , losa resenja I da sacuvaju
                     svoje vreme, zivce I novac. Pored toga, oni znaju da je to I najbolji nacin da podignu vrednost svoje
-                    nekretnine.
-                    REKLI SU…………………………………..(ovo tek treba da nabavim od svojih bivsih klijenata)</td>
+                    nekretnine.</td>
                 </tr>
             </table>
         </div>
