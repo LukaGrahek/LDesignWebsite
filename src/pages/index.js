@@ -8,6 +8,8 @@ import About from '../components/about'
 import Services from '../components/services'
 import Projects from '../components/projects'
 import Process from '../components/process'
+import Review from '../components/review'
+import ReviewHeader from '../components/reviewHeader'
 
 import '../styles/indexStyle.css'
 
@@ -20,6 +22,8 @@ const IndexPage = () => {
       <Services/>
       <Projects/>
       <Process />
+      <ReviewHeader />
+      <Review />
     </Layout>
   )
 }

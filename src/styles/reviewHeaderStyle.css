@@ -1,0 +1,14 @@
+
+#Review{
+    margin-top: 5rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    background-color:white;
+    text-align:center;
+}
+
+h1 {
+    font-size: 3rem;
+}
