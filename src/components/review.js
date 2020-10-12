@@ -9,12 +9,12 @@ const Review = () => {
         <Carousel id="reviews">
             <Carousel.Item>
                 <div class='reviewFrame'>
-                    <h2>This is my first review</h2>
+                    <h2>This is just the first sample review</h2>
                 </div>
             </Carousel.Item>
             <Carousel.Item>
                 <div class='reviewFrame'>
-                    <h2>This is my second review</h2>
+                    <h2>This is just the second sample review</h2>
                 </div>
             </Carousel.Item>
             </Carousel>
