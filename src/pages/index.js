@@ -10,6 +10,7 @@ import Projects from '../components/projects'
 import Process from '../components/process'
 import Review from '../components/review'
 import ReviewHeader from '../components/reviewHeader'
+import Contact from '../components/contact'
 
 import '../styles/indexStyle.css'
 
@@ -24,6 +25,7 @@ const IndexPage = () => {
       <Process />
       <ReviewHeader />
       <Review />
+      <Contact />
     </Layout>
   )
 }
