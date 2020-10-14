@@ -24,3 +24,14 @@
 #AboutTitle{
     padding-bottom: 2%;
 }
+
+input {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width:20rem;
+    height: 5%;
+    margin-left: 10%;
+    margin-top: 16%;
+}

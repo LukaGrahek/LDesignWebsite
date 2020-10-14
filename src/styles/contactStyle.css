@@ -3,4 +3,42 @@
     margin-top: 10rem;
     padding-top: 2%;
     padding-left: 2%;
+    padding-bottom: 2%;
+}
+
+.contactInfo {
+    font-size: 1.5rem;
+}
+#Name {
+    margin: 1rem;
+    width: 500px;
+}
+
+#Email {
+    margin: 1rem;
+    width: 500px;
+}
+
+#Phone {
+    margin: 1rem;
+    width: 500px;
+}
+
+
+.Message {
+      width: 500px;
+      height: 240px;
+      resize: none;
+      margin-right: 2rem;
+      
+  }
+
+#SubmitButton {
+  margin-top: 0;
+  margin-left: 1rem;
+  width: 500px;
+}
+
+#contactSubmission {
+    margin: auto;
 }
