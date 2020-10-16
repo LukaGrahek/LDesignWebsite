@@ -1,0 +1,10 @@
+npm init    -makes the package.json file ( spam enter a bunch until package is made)
+
+Installs:
+
+npm i node
+npm i express nodemon
+npm i mongoose
+npm i dotenv
+npm i body-parser
+npm i cors
