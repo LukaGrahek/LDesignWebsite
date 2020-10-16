@@ -22,57 +22,29 @@ export default class Contact extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-   //     this.sendData();
-        alert(`Welcome ${this.state.name} ${this.state.email} ${this.state.tel} ${this.state.mes}!`);
+        this.sendData();
+       // alert(`Welcome ${this.state.name} ${this.state.email} ${this.state.tel} ${this.state.mes}!`);
         
       }
 
-    // componentDidMount = () => {                                                GETS DATA
-    //     axios.get('/:postId5f88cbb3bea47c4f843f17be')
-    //         .then(() => {
-    //             alert('Data is here');
-    //         })
-    //         .catch(() => {
-    //             alert('Data not here');
-    //         })
-    // }
-
+      sendData = () => {
+        axios.post('http://localhost:3000', {
+            name: 'this is my name',
+            email: 'thisismyemail@email.com',
+            phone: '123123123',
+            message: 'this is a test message'
+        })
+        .then(response => {
+            console.log(response);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    };
 
     // getData = () => {                      ANOTHER WAY TO GET DATA
     //     axios.get('/:postId5f88cbb3bea47c4f843f17be').then(response => {
     //         console.log(response);
-    //     });
-    // }
-
-
-    // sendData = () => {
-    //     axios.post('http://localhost:3000/infos', {
-    //         name: this.state.name,
-    //         email: this.state.email,
-    //         phone: this.state.tel,
-    //         message: this.state.mes
-    //     })
-    //     .then(response => {
-    //         console.log(response);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     });
-    // };
-
-
-    // componentDidMount = () => {
-    //     axios.post('/', {
-    //         name: this.state.name,
-    //         email: this.state.email,
-    //         phone: this.state.tel,
-    //         message: this.state.mes
-    //     })
-    //     .then(response => {
-    //         console.log(response);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
     //     });
     // }
         
