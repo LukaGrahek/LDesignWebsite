@@ -30,41 +30,45 @@ export default class Contact extends React.Component {
             <h1>Contact Us</h1>
             <form onSubmit={this.handleSubmit}>
                 <table id='contactSubmission'>
-                   <tr>
-                     <th></th>
-                     <th></th>
-                     <th></th>
-                 </tr>
-                 <tr>
-                    <th>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="name"
-                            placeholder='Your Name'
-                            value={this.state.name}
-                            onChange={this.handleInputChange}
-                        ></input><br></br>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input
+                                type="text"
+                                id="Name"
+                                name="name"
+                                placeholder='Your Name'
+                                value={this.state.name}
+                                onChange={this.handleInputChange}
+                            ></input><br></br>
 
-                        <input
-                            type="email"
-                            id="Email"
-                            name="email"
-                            placeholder='Your Email'
-                            value={this.state.email}
-                            onChange={this.handleInputChange}
-                        ></input><br></br>
+                            <input
+                                type="email"
+                                id="Email"
+                                name="email"
+                                placeholder='Your Email'
+                                value={this.state.email}
+                                onChange={this.handleInputChange}
+                            ></input><br></br>
 
-                        <input
-                            type="tel"
-                            id="Phone"
-                            name="tel"
-                            placeholder='Your Phone'
-                            value={this.state.tel}
-                            onChange={this.handleInputChange}
-                        ></input><br></br>
+                            <input
+                                type="tel"
+                                id="Phone"
+                                name="tel"
+                                placeholder='Your Phone'
+                                value={this.state.tel}
+                                onChange={this.handleInputChange}
+                            ></input><br></br>
 
-                        <input type="submit" id="SubmitButton" value="Submit"></input>
+                            <input
+                                type="submit"
+                                id="SubmitButton"
+                                value="Submit"
+                            ></input>
                         </th>
                         <th>
                             <textarea
