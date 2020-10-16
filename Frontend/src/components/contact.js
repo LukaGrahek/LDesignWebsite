@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import '../styles/contactStyle.css'
 
 export default class Contact extends React.Component {
@@ -24,6 +25,16 @@ export default class Contact extends React.Component {
         alert(`Welcome ${this.state.name} ${this.state.email} ${this.state.tel} ${this.state.mes}!`)
       }
 
+    componentDidMount = () => {
+        axios.get('/:postId5f88cbb3bea47c4f843f17be')
+            .then(() => {
+                alert('Data is here');
+            })
+            .catch(() => {
+                alert('Data not here');
+            })
+    }
+        
     render() {
         return (
         <div class='contactSection'>
