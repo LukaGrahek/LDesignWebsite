@@ -22,17 +22,16 @@ export default class Contact extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        this.sendData();
-       // alert(`Welcome ${this.state.name} ${this.state.email} ${this.state.tel} ${this.state.mes}!`);
+        this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
         
       }
 
-      sendData = () => {
+      sendData = (submitname, submitemail, submitphone, submitmessage) => {
         axios.post('http://localhost:3000', {
-            name: 'this is my name',
-            email: 'thisismyemail@email.com',
-            phone: '123123123',
-            message: 'this is a test message'
+            name: submitname,
+            email: submitemail,
+            phone: submitphone,
+            message: submitmessage
         })
         .then(response => {
             console.log(response);
@@ -42,7 +41,7 @@ export default class Contact extends React.Component {
         });
     };
 
-    // getData = () => {                      ANOTHER WAY TO GET DATA
+    // getData = () => {               GET DATA
     //     axios.get('/:postId5f88cbb3bea47c4f843f17be').then(response => {
     //         console.log(response);
     //     });
