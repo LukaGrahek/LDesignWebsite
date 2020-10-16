@@ -67,6 +67,7 @@ export default class Contact extends React.Component {
                                 placeholder='Your Name'
                                 value={this.state.name}
                                 onChange={this.handleInputChange}
+                                required
                             ></input><br></br>
 
                             <input
@@ -76,6 +77,7 @@ export default class Contact extends React.Component {
                                 placeholder='Your Email'
                                 value={this.state.email}
                                 onChange={this.handleInputChange}
+                                required
                             ></input><br></br>
 
                             <input
@@ -85,6 +87,7 @@ export default class Contact extends React.Component {
                                 placeholder='Your Phone'
                                 value={this.state.tel}
                                 onChange={this.handleInputChange}
+                                required
                             ></input><br></br>
 
                             <input
