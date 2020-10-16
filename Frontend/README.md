@@ -6,9 +6,9 @@ Grade 12 summative project by Luka Grahek and Sasha Tsarapkine
 installs:
 
 npm i node
-npm install -g gatsby-cli
-npm install react-bootstrap bootstrap
-npm install react-scroll
+npm i -g gatsby-cli
+npm i react-bootstrap bootstrap
+npm i react-scroll
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 commands:
 
