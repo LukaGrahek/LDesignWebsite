@@ -23,6 +23,11 @@ const ContactInfoSchema = mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+
+    status: {
+        type: String,
+        default: "open"
     }
 });
 
