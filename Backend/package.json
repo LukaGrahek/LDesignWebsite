@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run backend\" \"cd ../Frontend && gatsby build && npm run develop\"",
+    "start": "concurrently \"npm run backend\" \"cd.. && cd Frontend && gatsby build\"",
     "backend": "nodemon app.js"
   },
   "author": "",
