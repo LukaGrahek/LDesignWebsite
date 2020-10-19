@@ -2,8 +2,39 @@ import React from 'react';
 import axios from 'axios';
 import '../styles/contactStyle.css'
 
+function phonenumber(c){
+    let count = 0;
+    for (let position = 0; position < c.length; position++) {
+      
+       if ((c.charAt(position)+1)%13>0 && c.charAt(position)%13 != NaN)
+         {
+            count += 1;
+            console.log(c.charAt(position)%13 +" Success");
+         }
+     }
+
+    if(c.toLowerCase() === c.toUpperCase() && count>=10 && count<=16){
+        console.log("Pass")
+        return true;
+    } 
+    else{
+        console.log("bad" + count )
+      
+        return false;
+    }
+}
+
+
 export default class Contact extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: ""
+        }
+      }
+ 
+      
     state = {
         name: "",
         email: "",
@@ -22,11 +53,18 @@ export default class Contact extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
+        if(phonenumber(this.state.tel)){
+            this.setState({ message: ""});
+            this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
+        }
+        else{
+            this.setState({ message: "Please enter a proper phone number."});
+        }
         
       }
 
       sendData = (submitname, submitemail, submitphone, submitmessage) => {
+        
         axios.post('http://localhost:3000', {
             name: submitname,
             email: submitemail,
@@ -46,7 +84,9 @@ export default class Contact extends React.Component {
     //         console.log(response);
     //     });
     // }
-        
+    
+
+
     render() {
         return (
         <div class='contactSection'>
@@ -95,6 +135,7 @@ export default class Contact extends React.Component {
                                 id="SubmitButton"
                                 value="Submit"
                             ></input>
+                            <p id="errorMessage">{ this.state.message }</p>
                         </th>
                         <th>
                             <textarea

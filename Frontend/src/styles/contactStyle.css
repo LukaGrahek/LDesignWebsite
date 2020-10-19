@@ -42,3 +42,9 @@
 #contactSubmission {
     margin: auto;
 }
+
+#errorMessage{
+    color: red;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
