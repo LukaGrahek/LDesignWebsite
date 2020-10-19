@@ -17,6 +17,20 @@ const scrollTop = () =>{
     window.scrollTo({top: docHeight*0.245, behavior: 'smooth'});
  };
 
+ const scrollProjects = () =>{
+    let docHeight = document.documentElement.scrollHeight;
+    window.scrollTo({top: docHeight*0.46, behavior: 'smooth'});
+ };
+
+ const scrollProcess = () =>{
+    let docHeight = document.documentElement.scrollHeight;
+    window.scrollTo({top: docHeight*0.66, behavior: 'smooth'});
+ };
+
+ const scrollContact = () =>{
+    let docHeight = document.documentElement.scrollHeight;
+    window.scrollTo({top: docHeight, behavior: 'smooth'});
+ };
 
 const Header = () => {
     return (
@@ -41,13 +55,19 @@ const Header = () => {
                     </Link>
                 </li>
                 <li>
-                    PROJECTS
+                    <Link onClick={scrollProjects}>
+                        PROJECTS
+                    </Link>
                 </li>
                 <li>
-                    PROCESS
+                    <Link onClick={scrollProcess}>
+                        PROCESS
+                    </Link>
                 </li>
                 <li>
-                    CONTACT
+                    <Link onClick={scrollContact}>
+                        CONTACT
+                    </Link>
                 </li>
                 <li id="languageSelect">
                     EN
