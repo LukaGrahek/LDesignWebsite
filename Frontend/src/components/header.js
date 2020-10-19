@@ -8,11 +8,13 @@ const scrollTop = () =>{
  };
 
  const scrollAbout = () =>{
-    window.scrollTo({top: 1700, behavior: 'smooth'});
+    let docHeight = document.documentElement.scrollHeight;
+    window.scrollTo({top: docHeight*0.111, behavior: 'smooth'});
  };
 
  const scrollServices = () =>{
-    window.scrollTo({top: 2520, behavior: 'smooth'});
+    let docHeight = document.documentElement.scrollHeight;
+    window.scrollTo({top: docHeight*0.245, behavior: 'smooth'});
  };
 
 
