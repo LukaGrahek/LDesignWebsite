@@ -5,7 +5,7 @@ import '../styles/projectsStyle.css';
 
 const Projects = () => {
     return(
-        <Jumbotron>
+        <Jumbotron id="JtronProjects">
             <h1 id="ProjTitle">Projects</h1>
             <div id="projectsTABLE">
                 <div class="row">
