@@ -6,7 +6,7 @@ function phonenumber(c){
     let count = 0;
     for (let position = 0; position < c.length; position++) {
       
-       if ((c.charAt(position)+1)%13>0 && c.charAt(position)%13 != NaN)
+       if ((c.charAt(position)+1)%13>0 && c.charAt(position)%13 != NaN && c.charAt(position) != " ")
          {
             count += 1;
             console.log(c.charAt(position)%13 +" Success");
@@ -19,6 +19,28 @@ function phonenumber(c){
     } 
     else{
         console.log("bad" + count )
+      
+        return false;
+    }
+}
+
+function nameCheck(c){
+    let count = 0;
+    for (let position = 0; position < c.length; position++) {
+      
+       if (c.charAt(position).toLowerCase() === c.charAt(position).toUpperCase() && c.charAt(position) != " ")
+         {
+            count += 1;
+            console.log(c.charAt(position) +" Success");
+         }
+     }
+
+    if(count === 0){
+        console.log("NAMEPass")
+        return true;
+    } 
+    else{
+        console.log("NAMEbad" + count )
       
         return false;
     }
@@ -53,15 +75,21 @@ export default class Contact extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        if(phonenumber(this.state.tel)){
+        if(phonenumber(this.state.tel) && nameCheck(this.state.name)){
             this.setState({ message: ""});
             this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
         }
         else{
-            this.setState({ message: "Please enter a proper phone number."});
-        }
-        
-      }
+            if(!nameCheck(this.state.name)){ 
+                 this.setState({ message: "Please enter a proper name."});
+            }
+
+            if(!phonenumber(this.state.tel)){
+                
+                this.setState({ message: "Please enter a proper phone number."});
+            }
+        } 
+    }
 
       sendData = (submitname, submitemail, submitphone, submitmessage) => {
         
