@@ -10,6 +10,8 @@ npm i -g gatsby-cli
 npm i react-bootstrap bootstrap
 npm i react-scroll
 npm i axios
+npm install --save react-google-recaptcha
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 commands:
 

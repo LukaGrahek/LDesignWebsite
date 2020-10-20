@@ -1,6 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import ReCAPTCHA from "react-google-recaptcha";
 import '../styles/contactStyle.css'
+
+const recaptchaRef = React.createRef();
+
+let recapVal = false;
 
 function phonenumber(c){
     let count = 0;
@@ -9,8 +14,13 @@ function phonenumber(c){
        if ((c.charAt(position)+1)%13>0 && c.charAt(position)%13 != NaN && c.charAt(position) != " ")
          {
             count += 1;
-            console.log(c.charAt(position)%13 +" Success");
+
          }
+         
+        if(c.charAt(position) === "9"){
+            console.log("nine here!")
+            count += 1;
+        }
      }
 
     if(c.toLowerCase() === c.toUpperCase() && count>=10 && count<=16){
@@ -75,7 +85,7 @@ export default class Contact extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        if(phonenumber(this.state.tel) && nameCheck(this.state.name)){
+        if(phonenumber(this.state.tel) && nameCheck(this.state.name) && recapVal){
             this.setState({ message: ""});
             this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
         }
@@ -87,6 +97,10 @@ export default class Contact extends React.Component {
             if(!phonenumber(this.state.tel)){
                 
                 this.setState({ message: "Please enter a proper phone number."});
+            }
+
+            if(!recapVal){
+                this.setState({ message: "Please complete the ReCAPTCHA."});
             }
         } 
     }
@@ -113,7 +127,10 @@ export default class Contact extends React.Component {
     //     });
     // }
     
-
+    onChange() {
+        recapVal =true;
+        console.log("ReCaptcha Complete");
+    }
 
     render() {
         return (
@@ -174,7 +191,12 @@ export default class Contact extends React.Component {
                                 value={this.state.mes}
                                 onChange={this.handleInputChange}
                             ></textarea>      
-
+                            
+                            <ReCAPTCHA
+                                ref={recaptchaRef}
+                                sitekey="6LeykdkZAAAAALQRKsIvTA_juBG6toiF-a8y8yRW"
+                                onChange={this.onChange}
+                            />
                         </th>
                         <th>
                             <div class='contactInfo'>
