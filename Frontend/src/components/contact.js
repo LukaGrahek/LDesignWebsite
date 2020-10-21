@@ -62,7 +62,8 @@ export default class Contact extends React.Component {
         super(props);
         this.recaptchaRef = React.createRef();
         this.state = {
-            message: ""
+            message: "",
+            good: ""
         }
       }
  
@@ -86,15 +87,22 @@ export default class Contact extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         var x = document.getElementById("recapid");
+        
 
         if (keep === "hidden") {
+            if(!recapVal){
+                this.setState({ good: "Please complete the reCAPTCHA"});
+            }
             console.log("hello " + keep);
             keep = "visible";
             x.style.visibility = "visible";
-        } else {
             
+        } else {
+            if(!recapVal){
+            this.setState({ good: "Please complete the reCAPTCHA"});
+            }
             if(phonenumber(this.state.tel) && nameCheck(this.state.name) && recapVal){
-                
+                this.setState({ good: ""});
                 this.setState({ message: ""});
                 this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
                 console.log("sent data");
@@ -104,17 +112,22 @@ export default class Contact extends React.Component {
                 recapVal = false;
             }
             else{
+                this.setState({ good: ""});
+
                 if(!nameCheck(this.state.name)){ 
                     this.setState({ message: "Please enter a proper name."});
+
                 }
 
                 if(!phonenumber(this.state.tel)){
                     
                     this.setState({ message: "Please enter a proper phone number."});
+
                 }
 
                 if(!recapVal){
-                    this.setState({ message: "Please complete the ReCAPTCHA."});
+                    this.setState({ message: "Please complete the reCAPTCHA."});
+
                 }
             } 
         }
@@ -129,10 +142,14 @@ export default class Contact extends React.Component {
             message: submitmessage
         })
         .then(response => {
+
+            this.setState({ good: "Your form has been sent succesfully, Thank You."});
+
             console.log(response);
         })
         .catch(err => {
             console.log(err);
+            this.setState({ message: "There was an error sending your form. Try again or use the contact information on the right of the screen."});
         });
     };
 
@@ -202,6 +219,7 @@ export default class Contact extends React.Component {
                                 value="Submit"
                             ></input>
                             <p id="errorMessage">{ this.state.message }</p>
+                            <p id="goodMessage">{ this.state.good }</p>
                         </th>
                         <th>
                             <textarea
