@@ -6,7 +6,7 @@ import '../styles/contactStyle.css'
 const recaptchaRef = React.createRef();
 
 let recapVal = false;
-
+let keep = "hidden";
 function phonenumber(c){
     let count = 0;
     for (let position = 0; position < c.length; position++) {
@@ -18,17 +18,17 @@ function phonenumber(c){
          }
          
         if(c.charAt(position) === "9"){
-            console.log("nine here!")
+
             count += 1;
         }
      }
 
     if(c.toLowerCase() === c.toUpperCase() && count>=10 && count<=16){
-        console.log("Pass")
+
         return true;
     } 
     else{
-        console.log("bad" + count )
+
       
         return false;
     }
@@ -41,16 +41,15 @@ function nameCheck(c){
        if (c.charAt(position).toLowerCase() === c.charAt(position).toUpperCase() && c.charAt(position) != " ")
          {
             count += 1;
-            console.log(c.charAt(position) +" Success");
+
          }
      }
 
     if(count === 0){
-        console.log("NAMEPass")
+
         return true;
     } 
     else{
-        console.log("NAMEbad" + count )
       
         return false;
     }
@@ -61,6 +60,7 @@ export default class Contact extends React.Component {
 
     constructor(props) {
         super(props);
+        this.recaptchaRef = React.createRef();
         this.state = {
             message: ""
         }
@@ -85,24 +85,39 @@ export default class Contact extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        if(phonenumber(this.state.tel) && nameCheck(this.state.name) && recapVal){
-            this.setState({ message: ""});
-            this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
-        }
-        else{
-            if(!nameCheck(this.state.name)){ 
-                 this.setState({ message: "Please enter a proper name."});
-            }
+        var x = document.getElementById("recapid");
 
-            if(!phonenumber(this.state.tel)){
+        if (keep === "hidden") {
+            console.log("hello " + keep);
+            keep = "visible";
+            x.style.visibility = "visible";
+        } else {
+            
+            if(phonenumber(this.state.tel) && nameCheck(this.state.name) && recapVal){
                 
-                this.setState({ message: "Please enter a proper phone number."});
+                this.setState({ message: ""});
+                this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
+                console.log("sent data");
+                this.resetCaptcha();
+                x.style.visibility = "hidden";
+                keep = "hidden";
+                recapVal = false;
             }
+            else{
+                if(!nameCheck(this.state.name)){ 
+                    this.setState({ message: "Please enter a proper name."});
+                }
 
-            if(!recapVal){
-                this.setState({ message: "Please complete the ReCAPTCHA."});
-            }
-        } 
+                if(!phonenumber(this.state.tel)){
+                    
+                    this.setState({ message: "Please enter a proper phone number."});
+                }
+
+                if(!recapVal){
+                    this.setState({ message: "Please complete the ReCAPTCHA."});
+                }
+            } 
+        }
     }
 
       sendData = (submitname, submitemail, submitphone, submitmessage) => {
@@ -130,6 +145,12 @@ export default class Contact extends React.Component {
     onChange() {
         recapVal =true;
         console.log("ReCaptcha Complete");
+
+    }
+
+    resetCaptcha() {
+        const recaptchaValue = recaptchaRef.current.reset();
+        //this.props.resetCaptcha(recaptchaValue);
     }
 
     render() {
@@ -191,12 +212,16 @@ export default class Contact extends React.Component {
                                 value={this.state.mes}
                                 onChange={this.handleInputChange}
                             ></textarea>      
-                            
+
                             <ReCAPTCHA
+
+                                id = "recapid"
                                 ref={recaptchaRef}
                                 sitekey="6LeykdkZAAAAALQRKsIvTA_juBG6toiF-a8y8yRW"
                                 onChange={this.onChange}
                             />
+
+
                         </th>
                         <th>
                             <div class='contactInfo'>
