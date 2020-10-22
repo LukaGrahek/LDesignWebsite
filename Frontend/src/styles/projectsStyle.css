@@ -2,22 +2,24 @@
   #divProjects{
     background-color: white;
   }
-  
-  
+
   #ProjTitle{
     padding-bottom: 2%;
     margin-left: 2%;
 }
 
-#projectsTABLE{
-    border:1px solid #234;
-}
   .column {
     margin: 2.5%;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
+
+.img-responsive{
+  width: 26rem;
+  height: 14.6rem;
+  border:1px solid #234;
+}
 
   .hovereffect {
     width: 100%;
@@ -53,7 +55,7 @@
     color:#fff;
     text-align:center;
     position:relative;
-    font-size:40px;
+    font-size:30px;
     background:rgba(0,0,0,0.6);
     -webkit-transform:translatey(-100px);
     -ms-transform:translatey(-100px);
@@ -71,7 +73,7 @@
     border:1px solid #fff;
     background-color:transparent;
     opacity:0;
-    font-size:25px;
+    font-size:15px;
     filter:alpha(opacity=0);
     -webkit-transition:all .2s ease-in-out;
     transition:all .2s ease-in-out;
