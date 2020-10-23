@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react'
 import p1 from '../photos/projectIcons/proj1.jpg';
 import p2 from '../photos/projectIcons/proj2.jpg';
 import p3 from '../photos/projectIcons/proj3.jpg';
@@ -7,10 +7,19 @@ import p5 from '../photos/projectIcons/proj5.jpg';
 import p6 from '../photos/projectIcons/proj6.jpg';
 import p7 from '../photos/projectIcons/proj7.jpg';
 import p8 from '../photos/projectIcons/proj8.jpg';
-import {Button, Jumbotron, Modal} from 'react-bootstrap'
+import b1 from '../photos/BeforeAfter/before1.jpg';
+import a1 from '../photos/BeforeAfter/after1.jpg';
+import b2 from '../photos/BeforeAfter/before2.jpg';
+import a2 from '../photos/BeforeAfter/after2.jpg';
+import b3 from '../photos/BeforeAfter/before3.jpg';
+import a3 from '../photos/BeforeAfter/after3.jpg';
+import b4 from '../photos/BeforeAfter/before4.jpg';
+import a4 from '../photos/BeforeAfter/after4.jpg';
+import {Button, Jumbotron, Modal} from 'react-bootstrap';
+import BeforeAfterSlider from 'react-before-after-slider';
 import '../styles/projectsStyle.css';
-
-class Projects extends React.Component{
+//e
+class Projects extends Component{
 
     constructor(){
         super()
@@ -109,6 +118,15 @@ class Projects extends React.Component{
                             <Modal.Body>
                                 <img src={p2} alt="Project 2 opener"/>
                                 This image Lorem Ipsum
+                                Before and After Slider Below!
+                                <BeforeAfterSlider
+                                    before={b1}
+                                    after={a1}
+                                    width={960}
+                                    height={720}
+                                    defaultProgress	={0.1}
+                                    id="slider1"
+                                />
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button onClick={()=>{this.showModal2()}}>
@@ -134,6 +152,14 @@ class Projects extends React.Component{
                             <Modal.Body>
                                 <img src={p3} alt="Project 3 opener"/>
                                 This image Lorem Ipsum
+                                <BeforeAfterSlider
+                                    before={b4}
+                                    after={a4}
+                                    width={1000}
+                                    height={664}
+                                    defaultProgress	={0.1}
+                                    id="slider4"
+                                />
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button onClick={()=>{this.showModal3()}}>
@@ -186,6 +212,14 @@ class Projects extends React.Component{
                             <Modal.Body>
                                 <img src={p5} alt="Project 5 opener"/>
                                 This image Lorem Ipsum
+                                <BeforeAfterSlider
+                                    before={b2}
+                                    after={a2}
+                                    width={960}
+                                    height={720}
+                                    defaultProgress	={0.1}
+                                    id="slider2"
+                                />
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button onClick={()=>{this.showModal5()}}>
@@ -211,6 +245,14 @@ class Projects extends React.Component{
                             <Modal.Body>
                                 <img src={p6} alt="Project 6 opener"/>
                                 This image Lorem Ipsum
+                                <BeforeAfterSlider
+                                    before={b3}
+                                    after={a3}
+                                    width={960}
+                                    height={720}
+                                    defaultProgress	={0.1}
+                                    id="slider3"
+                                />
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button onClick={()=>{this.showModal6()}}>
