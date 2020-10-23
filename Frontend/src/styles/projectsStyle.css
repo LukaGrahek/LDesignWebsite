@@ -1,5 +1,5 @@
 
-  #divProjects{
+  #JtronProjects{
     background-color: white;
   }
 
@@ -18,7 +18,7 @@
 .img-responsive{
   width: 26rem;
   height: 14.6rem;
-  border:1px solid #234;
+  border:1px solid hsl(210, 3%, 69%);
 }
 
   .hovereffect {
@@ -65,7 +65,7 @@
     padding:10px;
     }
     
-    .hovereffect a.info {
+    .hovereffect button.info {
     text-decoration:none;
     display:inline-block;
     text-transform:uppercase;
@@ -81,7 +81,7 @@
     padding:7px 14px;
     }
     
-    .hovereffect a.info:hover {
+    .hovereffect button.info:hover {
     box-shadow:0 0 5px #fff;
     }
     
@@ -96,7 +96,7 @@
     filter:alpha(opacity=100);
     }
     
-    .hovereffect:hover h2,.hovereffect:hover a.info {
+    .hovereffect:hover h2,.hovereffect:hover button.info {
     opacity:1;
     filter:alpha(opacity=100);
     -ms-transform:translatey(0);
@@ -104,7 +104,7 @@
     transform:translatey(0);
     }
     
-    .hovereffect:hover a.info {
+    .hovereffect:hover button.info {
     -webkit-transition-delay:.2s;
     transition-delay:.2s;
     }

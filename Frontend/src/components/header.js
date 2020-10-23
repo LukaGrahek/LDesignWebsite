@@ -1,7 +1,7 @@
 import React from 'react'
 
 import '../styles/headerStyle.css'
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link } from 'react-scroll'
 
 const scrollTop = () =>{
     window.scrollTo({top: 0, behavior: 'smooth'});
