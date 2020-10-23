@@ -11,6 +11,7 @@ import Process from '../components/process'
 import Review from '../components/review'
 import ReviewHeader from '../components/reviewHeader'
 import Contact from '../components/contact'
+import Footer from '../components/footer'
 
 import '../styles/indexStyle.css'
 
@@ -26,6 +27,7 @@ const IndexPage = () => {
       <ReviewHeader />
       <Review />
       <Contact />
+      <Footer />
     </Layout>
   )
 }
