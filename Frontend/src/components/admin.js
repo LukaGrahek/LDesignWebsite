@@ -62,13 +62,13 @@ export default class Admin extends React.Component {
             let data = response.data;
 
             console.log(data[2]);
-
             this.generateTable(table, data);
 
         });
     }
     
     generateTable = (table, data) =>{
+        
         for (let element of data) {
           let row = table.insertRow();
           let _id = data._id;
