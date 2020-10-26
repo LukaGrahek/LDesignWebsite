@@ -27,7 +27,7 @@ const ContactInfoSchema = mongoose.Schema({
 
     status: {
         type: String,
-        default: "open"
+        default: "Ongoing"
     }
 });
 
