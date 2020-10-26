@@ -1,13 +1,118 @@
 import React from 'react';
+import axios from 'axios';
 
 import '../styles/adminStyle.css'
 
-const Admin = () => {
-    return (
+export default class Admin extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: "",
+            good: ""
+        }
+      }
+ 
+      
+    state = {
+        name: "",
+        email: "",
+        tel: "",
+        mes: ""
+      }
+
+    handleInputChange = event => {
+        const target = event.target
+        const value = target.value
+        const name = target.name
+        this.setState({
+          [name]: value,
+        })
+    }
+
+    handleSubmit = event => {
+        event.preventDefault()
+    }
         
-            <h1 id='AdminPageTitle'>Admin Page</h1>
 
-    )
+
+    //   sendData = (submitname, submitemail, submitphone, submitmessage) => {
+        
+    //     axios.post('http://localhost:3000', {
+    //         name: submitname,
+    //         email: submitemail,
+    //         phone: submitphone,
+    //         message: submitmessage
+    //     })
+    //     .then(response => {
+
+    //         this.setState({ good: "Your form has been sent succesfully, Thank You."});
+
+    //         console.log(response);
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //         this.setState({ message: "There was an error sending your form. Try again or use the contact information on the right of the screen."});
+    //     });
+    // };
+
+    getData = () => {
+        axios.get('http://localhost:3000').then(response => {
+            let table = document.getElementById("firstTable"); //gets table location from index.html
+            let data = response.data;
+
+            console.log(data[2]);
+            
+            this.generateTable(table, data);
+
+        });
+    }
+
+    generateTable = (table, data) =>{
+        for (let element of data) {
+          let row = table.insertRow();
+          let _id = data._id;
+          for (_id in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[_id]);
+            cell.appendChild(text);
+          }
+        }
+      }
+
+    
+    
+    
+
+    render() {
+        return (
+            <div id="adminDiv">
+                <h1>Admin Page</h1>
+                <table id="title">
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Message
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                    </tr>
+                </table>
+        <table id="firstTable">{this.getData()}</table>
+            </div>
+        
+        )
+    }
 }
-
-export default Admin
