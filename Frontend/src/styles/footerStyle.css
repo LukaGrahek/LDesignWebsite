@@ -1,9 +1,7 @@
 #footerJ{
-    margin-bottom: 0;
-    height: 100px;
-}
-
-body {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 20px;
+    padding-bottom: 5px;
     margin: 0;
-    padding: 0;
 }
