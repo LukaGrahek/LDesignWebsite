@@ -37,7 +37,7 @@ export default class Footer extends React.Component {
     render(){
         return(
             <Jumbotron id="footerJ">
-                <p onClick={()=>{this.showModal()}}>admin login</p>
+                <p id='adminLogin' onClick={()=>{this.showModal()}}>admin login</p>
 
                 <Modal 
                         dialogClassName="mw"

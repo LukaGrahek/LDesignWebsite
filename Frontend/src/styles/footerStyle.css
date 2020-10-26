@@ -4,3 +4,8 @@
     margin: 0;
     background-color: white;
 }
+
+#adminLogin:hover {
+    cursor: pointer;
+    color: grey;
+}
