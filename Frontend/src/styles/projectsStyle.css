@@ -17,6 +17,10 @@
   
 }
 
+.modalImage{
+  max-width: 92.5rem;
+}
+
   .column {
     margin: 2.5%;
     display: block;
@@ -25,7 +29,7 @@
   }
 
 .mw{
-  min-width: 1955px;
+  min-width: 95rem;
 
 }
 

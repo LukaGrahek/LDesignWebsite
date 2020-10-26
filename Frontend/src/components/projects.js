@@ -91,7 +91,7 @@ class Projects extends Component{
                         >
                             <Modal.Header closeButton>Project Gallery</Modal.Header>
                             <Modal.Body>
-                                <img src={p1} alt="Project 1 opener"/>
+                                <img class = "modalImage" src={p1} alt="Project 1 opener"/>
                                 This image Lorem Ipsum
                             </Modal.Body>
                             <Modal.Footer>
@@ -116,7 +116,7 @@ class Projects extends Component{
                         >
                             <Modal.Header closeButton>Project Gallery</Modal.Header>
                             <Modal.Body>
-                                <img src={p2} alt="Project 2 opener"/>
+                                <img class = "modalImage" src={p2} alt="Project 2 opener"/>
                                 This image Lorem Ipsum
                                 Before and After Slider Below!
                                 <BeforeAfterSlider
@@ -150,7 +150,7 @@ class Projects extends Component{
                         >
                             <Modal.Header closeButton>Project Gallery</Modal.Header>
                             <Modal.Body>
-                                <img src={p3} alt="Project 3 opener"/>
+                                <img class = "modalImage" src={p3} alt="Project 3 opener"/>
                                 This image Lorem Ipsum
                                 <BeforeAfterSlider
                                     before={b4}
@@ -184,7 +184,7 @@ class Projects extends Component{
                         >
                             <Modal.Header closeButton>Project Gallery</Modal.Header>
                             <Modal.Body>
-                                <img src={p4} alt="Project 4 opener"/>
+                                <img class = "modalImage" src={p4} alt="Project 4 opener"/>
                                 This image Lorem Ipsum
                             </Modal.Body>
                             <Modal.Footer>
@@ -210,7 +210,7 @@ class Projects extends Component{
                         >
                             <Modal.Header closeButton>Project Gallery</Modal.Header>
                             <Modal.Body>
-                                <img src={p5} alt="Project 5 opener"/>
+                                <img class = "modalImage" src={p5} alt="Project 5 opener"/>
                                 This image Lorem Ipsum
                                 <BeforeAfterSlider
                                     before={b2}
@@ -243,7 +243,7 @@ class Projects extends Component{
                         >
                             <Modal.Header closeButton>Project Gallery</Modal.Header>
                             <Modal.Body>
-                                <img src={p6} alt="Project 6 opener"/>
+                                <img class = "modalImage" src={p6} alt="Project 6 opener"/>
                                 This image Lorem Ipsum
                                 <BeforeAfterSlider
                                     before={b3}
@@ -276,7 +276,7 @@ class Projects extends Component{
                         >
                             <Modal.Header closeButton>Project Gallery</Modal.Header>
                             <Modal.Body>
-                                <img src={p7} alt="Project 7 opener"/>
+                                <img class = "modalImage" src={p7} alt="Project 7 opener"/>
                                 This image Lorem Ipsum
                             </Modal.Body>
                             <Modal.Footer>
@@ -301,7 +301,7 @@ class Projects extends Component{
                         >
                             <Modal.Header closeButton>Project Gallery</Modal.Header>
                             <Modal.Body>
-                                <img src={p8} alt="Project 8 opener"/>
+                                <img class = "modalImage" src={p8} alt="Project 8 opener"/>
                                 This image Lorem Ipsum
                             </Modal.Body>
                             <Modal.Footer>
