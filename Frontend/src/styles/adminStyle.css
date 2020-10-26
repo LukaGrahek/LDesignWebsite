@@ -1,9 +1,23 @@
 #firstTable{
     border-style: solid;
     padding:2rem;
+    margin-top: 2rem;
 }
 
-#firstTable tr{
+#firstTable tr td{
     border-style: solid;
+    padding: 10px;
 
+}
+
+th {
+    padding: 10px;
+    border-style: solid;
+}
+
+#adminDiv {
+    background-color:white;
+    padding: 2rem;
+    background-image:none;
+    margin: 4rem;
 }

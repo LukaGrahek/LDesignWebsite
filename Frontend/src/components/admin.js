@@ -88,8 +88,17 @@ export default class Admin extends React.Component {
         return (
             <div id="adminDiv">
                 <h1>Admin Page</h1>
-                <table id="title">
+                <table id="firstTable">
                     <tr>
+                        <th>
+                            Message
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            ID
+                        </th>
                         <th>
                             Name
                         </th>
@@ -100,17 +109,14 @@ export default class Admin extends React.Component {
                             Phone
                         </th>
                         <th>
-                            Message
-                        </th>
-                        <th>
                             Date
                         </th>
                         <th>
-                            Status
+                            # of Updates
                         </th>
                     </tr>
+                    {this.getData()}
                 </table>
-        <table id="firstTable">{this.getData()}</table>
             </div>
         
         )
