@@ -106,7 +106,6 @@ export default class Admin extends React.Component {
             let table = document.getElementById("firstTable"); //gets table location from index.html
             let data = response.data;
 
-            console.log(data[2]);
             this.generateTable(table, data);
 
         });
