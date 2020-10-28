@@ -20,4 +20,30 @@
     padding: 2rem;
     background-image:none;
     margin: 4rem;
+
+}
+
+#editSubmission textarea{
+    margin-left: 1rem;
+    padding: 1rem;
+    border-color: grey;
+    width: 25rem;
+
+}
+
+#editSubmission input{
+    margin: 1rem;
+    width: 25rem;
+
+    
+}
+
+#editSection {
+    margin-left: auto;
+    padding-left: 3rem;
+}
+
+.adminElements {
+    display: inline-table;
+    margin: 0;
 }

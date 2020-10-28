@@ -52,9 +52,10 @@ router.delete('/:postId', async (req,res) => {
 //UPDATE INFO
 router.patch('/:postId', async (req,res) => {
     try{
-        const updatedInfo = await Info.updateOne(
-            {_id: req.params.postId},
-             {$set: {title: req.body.title}}
+        const updatedInfo = await Info.findByIdAndUpdate(
+            req.params.postId,
+            req.body,
+             {new: true}
              );
         res.json(updatedInfo)
     }catch(err) {
