@@ -3,9 +3,14 @@
     padding-bottom: 5px;
     margin: 0;
     background-color: white;
+    
 }
 
 #adminLogin:hover {
     cursor: pointer;
     color: grey;
+}
+
+#adminLogin {
+    display:inline-flex;
 }
