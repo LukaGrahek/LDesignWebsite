@@ -1,11 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import { Modal, Button } from 'react-bootstrap'
 
 import '../styles/adminStyle.css'
 
 export default class Admin extends React.Component {
 
-    renderTable = true; 
+    renderTable = true;
 
     constructor(props) {
         super(props);
@@ -13,9 +14,9 @@ export default class Admin extends React.Component {
             message: "",
             good: ""
         }
-      }
- 
-      
+    }
+
+
     state = {
         name: "",
         email: "",
@@ -23,14 +24,14 @@ export default class Admin extends React.Component {
         mes: "",
         id: "",
         status: ""
-      }
+    }
 
     handleInputChange = event => {
         const target = event.target
         const value = target.value
         const name = target.name
         this.setState({
-          [name]: value,
+            [name]: value,
         })
     }
 
@@ -41,7 +42,12 @@ export default class Admin extends React.Component {
 
     }
 
+    showModal(){
+        this.setState({show:!this.state.show})
+    }
+
     handleDelete = () => {
+        
         axios.delete(`http://localhost:3000/${this.state.id}`, {
 
         });
@@ -50,39 +56,39 @@ export default class Admin extends React.Component {
 
     updateData = (id, updatename, updateemail, updatephone, updatemessage, updatestatus) => {
 
-        if(updatename !== ""){
+        if (updatename !== "") {
             axios.patch(`http://localhost:3000/${id}`, {
                 name: updatename
-            
+
             })
         }
-        if(updateemail !== ""){
+        if (updateemail !== "") {
             axios.patch(`http://localhost:3000/${id}`, {
                 email: updateemail
-            
+
             })
         }
-        if(updatephone !== ""){
+        if (updatephone !== "") {
             axios.patch(`http://localhost:3000/${id}`, {
                 phone: updatephone
-            
+
             })
         }
-        if(updatemessage !== ""){
+        if (updatemessage !== "") {
             axios.patch(`http://localhost:3000/${id}`, {
                 message: updatemessage
 
-            
+
             })
         }
-        if(updatestatus !== ""){
+        if (updatestatus !== "") {
             axios.patch(`http://localhost:3000/${id}`, {
                 status: updatestatus
-    
+
             })
         }
-        
-        
+
+
         window.location.reload(false);
     }
 
@@ -95,28 +101,53 @@ export default class Admin extends React.Component {
 
         });
     }
-    
-    generateTable = (table, data) =>{
 
-        if(this.renderTable == true){
+    generateTable = (table, data) => {
+
+        if (this.renderTable == true) {
             for (let element of data) {
                 let row = table.insertRow();
                 let _id = data._id;
                 for (_id in element) {
-                    if(_id !== "__v"){
+                    if (_id !== "__v") {
                         let cell = row.insertCell();
                         let text = document.createTextNode(element[_id]);
                         cell.appendChild(text);
-                    }                                    
+                    }
                 }
             }
             this.renderTable = false;
         }
-      }
+    }
 
     render() {
         return (
             <div id="adminDiv" >
+
+                <Modal
+                    dialogClassName="mw"
+                    show={this.state.show}
+                    onHide={() => { this.showModal() }}
+
+                    aria-labelledby="contained-modal-title-vcenter"
+                    dialogClassName="modal-40w"
+                    centered
+                >
+                    <Modal.Header>Are You Sure?</Modal.Header>
+
+                    <Modal.Footer>
+
+                        <Button variant="primary" onClick={() => { this.showModal(); this.handleDelete() }}>
+                            Yes
+                                    </Button>
+                        <Button variant="secondary" onClick={() => { this.showModal() }}>
+                            No
+                                    </Button>
+
+                    </Modal.Footer>
+
+                </Modal>
+
                 <h1>Admin Page</h1>
                 <table id="firstTable" class="adminElements">
                     <tr>
@@ -151,7 +182,7 @@ export default class Admin extends React.Component {
                         <table id='editSubmission'>
                             <tr>
                                 <th>
-                                  <input
+                                    <input
                                         type="text"
                                         id="Id"
                                         name="id"
@@ -161,7 +192,7 @@ export default class Admin extends React.Component {
                                         required
                                     ></input><br></br>
 
-                                   <select value={this.state.value} name="status" id="Status" onChange={this.handleInputChange}>
+                                    <select value={this.state.value} name="status" id="Status" onChange={this.handleInputChange}>
                                         <option>Status</option>
                                         <option value="Ongoing">Ongoing</option>
                                         <option value="Complete">Complete</option>
@@ -193,7 +224,7 @@ export default class Admin extends React.Component {
                                         value={this.state.tel}
                                         onChange={this.handleInputChange}
                                     ></input><br></br>
-                                    
+
                                     <textarea
                                         class="Message"
                                         name="mes"
@@ -203,21 +234,21 @@ export default class Admin extends React.Component {
                                         onChange={this.handleInputChange}
                                     ></textarea><br></br>
 
-                                    <input
+                                    <Button
                                         type="submit"
                                         id="SubmitButton"
                                         value="Submit"
-                                    ></input>
-                                    <button onClick={this.handleDelete}
+                                    >Submit</Button>
+                                    <Button onClick={()=>{this.showModal()}}
                                         id="DeleteButton"
-                                    >Delete</button>                                              
+                                    >Delete</Button>
                                 </th>
                             </tr>
                         </table>
                     </form>
                 </div>
             </div>
-        
+
         )
     }
 }

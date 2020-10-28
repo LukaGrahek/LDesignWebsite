@@ -39,6 +39,8 @@
 
 #editSubmission #SubmitButton{
     width: 12rem;
+    height: 2.8rem;
+    margin: 1rem;
 }
 
 #editSubmission select{
@@ -54,11 +56,12 @@
 }
 
 #DeleteButton {
-    padding: 0.6rem;
-    border-radius: 0.2rem;
-    border-width:0.08rem;
-    border-color: lightgray;
+
     width: 12rem;
+    height: 2.8rem;
+    background-color: lightgrey;
+    color: black;
+    border-color: grey;
 }
 
 .adminElements {
