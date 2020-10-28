@@ -37,6 +37,10 @@
     
 }
 
+#editSubmission #SubmitButton{
+    width: 12rem;
+}
+
 #editSubmission select{
     margin: 1rem;
     padding: 0.7rem;
@@ -47,6 +51,14 @@
 #editSection {
     margin-left: auto;
     padding-left: 3rem;
+}
+
+#DeleteButton {
+    padding: 0.6rem;
+    border-radius: 0.2rem;
+    border-width:0.08rem;
+    border-color: lightgray;
+    width: 12rem;
 }
 
 .adminElements {

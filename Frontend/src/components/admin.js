@@ -41,6 +41,13 @@ export default class Admin extends React.Component {
 
     }
 
+    handleDelete = () => {
+        axios.delete(`http://localhost:3000/${this.state.id}`, {
+
+        });
+        window.location.reload(false);
+    }
+
     updateData = (id, updatename, updateemail, updatephone, updatemessage, updatestatus) => {
 
         if(updatename !== ""){
@@ -96,7 +103,7 @@ export default class Admin extends React.Component {
                 let row = table.insertRow();
                 let _id = data._id;
                 for (_id in element) {
-                    if(_id != "__v"){
+                    if(_id !== "__v"){
                         let cell = row.insertCell();
                         let text = document.createTextNode(element[_id]);
                         cell.appendChild(text);
@@ -190,7 +197,7 @@ export default class Admin extends React.Component {
                                     <textarea
                                         class="Message"
                                         name="mes"
-                                        placeholder='Message (max 5000 characters) (Leave Blank For No Change)'
+                                        placeholder='Message (max 5000 characters)'
                                         maxlength="5000"
                                         value={this.state.mes}
                                         onChange={this.handleInputChange}
@@ -201,7 +208,9 @@ export default class Admin extends React.Component {
                                         id="SubmitButton"
                                         value="Submit"
                                     ></input>
-                                    
+                                    <button onClick={this.handleDelete}
+                                        id="DeleteButton"
+                                    >Delete</button>                                              
                                 </th>
                             </tr>
                         </table>
