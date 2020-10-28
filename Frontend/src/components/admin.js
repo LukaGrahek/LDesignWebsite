@@ -22,6 +22,7 @@ export default class Admin extends React.Component {
         tel: "",
         mes: "",
         id: "",
+        status: ""
       }
 
     handleInputChange = event => {
@@ -35,12 +36,13 @@ export default class Admin extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        this.updateData(this.state.id, this.state.name, this.state.email, this.state.tel, this.state.mes);
+        this.updateData(this.state.id, this.state.name, this.state.email, this.state.tel, this.state.mes, this.state.status);
 
 
     }
 
-    updateData = (id, updatename, updateemail, updatephone, updatemessage) => {
+    updateData = (id, updatename, updateemail, updatephone, updatemessage, updatestatus) => {
+
         if(updatename !== ""){
             axios.patch(`http://localhost:3000/${id}`, {
                 name: updatename
@@ -66,6 +68,14 @@ export default class Admin extends React.Component {
             
             })
         }
+        if(updatestatus !== ""){
+            axios.patch(`http://localhost:3000/${id}`, {
+                status: updatestatus
+    
+            })
+        }
+        
+        
         window.location.reload(false);
     }
         
@@ -171,6 +181,12 @@ export default class Admin extends React.Component {
                                         onChange={this.handleInputChange}
                                         required
                                     ></input><br></br>
+
+                                   <select value={this.state.value} name="status" id="Status" onChange={this.handleInputChange}>
+                                        <option>Status</option>
+                                        <option value="Ongoing">Ongoing</option>
+                                        <option value="Complete">Complete</option>
+                                    </select><br></br>
 
                                     <input
                                         type="text"

@@ -34,7 +34,13 @@
 #editSubmission input{
     margin: 1rem;
     width: 25rem;
+    
+}
 
+#editSubmission select{
+    margin: 1rem;
+    padding: 0.7rem;
+    width: 25rem;
     
 }
 
