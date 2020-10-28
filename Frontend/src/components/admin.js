@@ -78,28 +78,6 @@ export default class Admin extends React.Component {
         
         window.location.reload(false);
     }
-        
-
-
-    //   sendData = (submitname, submitemail, submitphone, submitmessage) => {
-        
-    //     axios.post('http://localhost:3000', {
-    //         name: submitname,
-    //         email: submitemail,
-    //         phone: submitphone,
-    //         message: submitmessage
-    //     })
-    //     .then(response => {
-
-    //         this.setState({ good: "Your form has been sent succesfully, Thank You."});
-
-    //         console.log(response);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //         this.setState({ message: "There was an error sending your form. Try again or use the contact information on the right of the screen."});
-    //     });
-    // };
 
     getData = () => {
         axios.get('http://localhost:3000').then(response => {
@@ -118,18 +96,16 @@ export default class Admin extends React.Component {
                 let row = table.insertRow();
                 let _id = data._id;
                 for (_id in element) {
-                  let cell = row.insertCell();
-                  let text = document.createTextNode(element[_id]);
-                  cell.appendChild(text);
+                    if(_id != "__v"){
+                        let cell = row.insertCell();
+                        let text = document.createTextNode(element[_id]);
+                        cell.appendChild(text);
+                    }                                    
                 }
-              }
-              this.renderTable = false;
+            }
+            this.renderTable = false;
         }
       }
-
-    
-    
-    
 
     render() {
         return (
@@ -157,9 +133,6 @@ export default class Admin extends React.Component {
                         </th>
                         <th>
                             Date
-                        </th>
-                        <th>
-                            # of Updates
                         </th>
                     </tr>
                     {this.getData()}
@@ -191,7 +164,7 @@ export default class Admin extends React.Component {
                                         type="text"
                                         id="Name"
                                         name="name"
-                                        placeholder='Name'
+                                        placeholder='Name (Leave Blank For No Change)'
                                         value={this.state.name}
                                         onChange={this.handleInputChange}
                                     ></input><br></br>
@@ -200,7 +173,7 @@ export default class Admin extends React.Component {
                                         type="email"
                                         id="Email"
                                         name="email"
-                                        placeholder='Email'
+                                        placeholder='Email (Leave Blank For No Change)'
                                         value={this.state.email}
                                         onChange={this.handleInputChange}
                                     ></input><br></br>
@@ -209,7 +182,7 @@ export default class Admin extends React.Component {
                                         type="tel"
                                         id="Phone"
                                         name="tel"
-                                        placeholder='Phone'
+                                        placeholder='Phone (Leave Blank For No Change)'
                                         value={this.state.tel}
                                         onChange={this.handleInputChange}
                                     ></input><br></br>
@@ -217,7 +190,7 @@ export default class Admin extends React.Component {
                                     <textarea
                                         class="Message"
                                         name="mes"
-                                        placeholder='Message (max 5000 characters)'
+                                        placeholder='Message (max 5000 characters) (Leave Blank For No Change)'
                                         maxlength="5000"
                                         value={this.state.mes}
                                         onChange={this.handleInputChange}
@@ -228,6 +201,7 @@ export default class Admin extends React.Component {
                                         id="SubmitButton"
                                         value="Submit"
                                     ></input>
+                                    
                                 </th>
                             </tr>
                         </table>
