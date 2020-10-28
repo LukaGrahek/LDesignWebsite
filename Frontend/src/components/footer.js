@@ -27,10 +27,18 @@ export default class Footer extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        alert(this.state.pass);
+        if(this.state.pass === "12345"){
+            document.getElementById("modalBody").innerHTML = "Welcome";
+            document.getElementById("modalBody").style.color = "Black";
+            window.open('http://localhost:8000/adminPage', '_blank');
+        }
+        else{
+            document.getElementById("modalBody").innerHTML = "Error, Incorrect Password";
+            document.getElementById("modalBody").style.color = "red";
+        }
     }
 
-    showModal(){
+    showModal = () => {
         this.setState({show:!this.state.show})
     }
 
@@ -52,7 +60,8 @@ export default class Footer extends React.Component {
 
                             <form onSubmit={this.handleSubmit}>
                                 <Modal.Body>
-                                    Please Enter the Admin Password
+                                    <p id="modalBody"> Please Enter the Admin Password</p>
+                                    
 
                                     <input
                                         type="password"
