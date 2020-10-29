@@ -4,6 +4,8 @@ import { Modal, Button } from 'react-bootstrap'
 
 import '../styles/adminStyle.css'
 
+let shown = true;
+
 export default class Admin extends React.Component {
 
     renderTable = true;
@@ -98,8 +100,33 @@ export default class Admin extends React.Component {
             let data = response.data;
 
             this.generateTable(table, data);
-
         });
+    }
+
+    getSortedData = () => {
+        axios.get('http://localhost:3000').then(response => {
+            let table2 = document.getElementById("sortedTable");
+            let data = response.data;
+
+            this.generateTable(table2,data.reverse());
+            table2.style.display = "none";
+        });
+    }
+
+    sortByDate = (data) =>{
+        
+        for(let element of data){
+            let newDate = ""
+            for(let i = 0; i < element.date.length; i++){
+                if (element.date.charAt(i) >= '0' && element.date.charAt(i) <= '9') {
+                   newDate += element.date.charAt(i);
+                }
+            }
+            element.date = parseInt(newDate);
+        }
+        let sorted = data.sort(function(a, b) {return a.date - b.date})
+        sorted = data.reverse();
+        return sorted;
     }
 
     generateTable = (table, data) => {
@@ -116,7 +143,24 @@ export default class Admin extends React.Component {
                     }
                 }
             }
-            this.renderTable = false;
+            //this.renderTable = false;
+        }
+    }
+
+    sortDateButton = () =>{
+        if(shown === false){
+            let table2 = document.getElementById("sortedTable");
+            let table = document.getElementById("firstTable");
+            table.style.display = "block";
+            table2.style.display = "none";
+            shown = true;
+        }
+        else{
+            let table2 = document.getElementById("sortedTable");
+            let table = document.getElementById("firstTable");
+            table2.style.display = "block";
+            table.style.display = "none";
+            shown = false;
         }
     }
 
@@ -170,11 +214,40 @@ export default class Admin extends React.Component {
                             Phone
                         </th>
                         <th>
-                            Date
+                            Date <button onClick = {this.sortDateButton}>sort</button>
                         </th>
                     </tr>
                     {this.getData()}
                 </table>
+
+                <table id="sortedTable" class="adminElements">
+                    <tr>
+                        <th>
+                            Message
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Date <button onClick = {this.sortDateButton}>sort</button>
+                        </th>
+                    </tr>
+                    {this.getSortedData()}
+                </table>
+
+
 
                 <div id="editSection" class="adminElements">
                     <h3>Edit Data</h3>
