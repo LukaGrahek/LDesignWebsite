@@ -12,7 +12,7 @@ import Process from '../components/process' // Imports the process section eleme
 import Review from '../components/review' // Imports the review section slider element
 import ReviewHeader from '../components/reviewHeader' // Imports the review section header element
 import Contact from '../components/contact' // Imports the contact sedction element
-import Footer from '../components/footer' // Imports the footer element
+
 
 import '../styles/indexStyle.css' // Imports styling
 
@@ -28,7 +28,6 @@ const IndexPage = () => {
       <ReviewHeader />
       <Review />
       <Contact />
-      <Footer />
     </Layout>
   )
 }
