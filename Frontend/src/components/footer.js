@@ -26,7 +26,7 @@ export default class Footer extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        if(this.state.pass === "12345"){
+        if(this.state.pass === process.env.ADMIN_PASSWORD){
             document.getElementById("modalBody").innerHTML = "Welcome";
             document.getElementById("modalBody").style.color = "Black";
             window.open('http://localhost:8000/adminPage', '_blank');
