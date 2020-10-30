@@ -1,8 +1,8 @@
 #firstTable, #sortedTable{
     border-style: none;
     border-spacing: 0ch;
-    padding:2rem;
-    margin-top: 2rem;
+    padding:0rem;
+    margin-top: 0rem;
 }
 
 #firstTable tr td, #sortedTable tr td{
