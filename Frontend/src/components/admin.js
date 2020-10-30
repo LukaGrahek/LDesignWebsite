@@ -1,8 +1,15 @@
-import React from 'react';
-import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap'
+// admin
+// Handles the html elements and functions for the adminpage:
+// - displays databse
+// - sorts the database
+// - allows for updating the client database
+// - allows for deletion of client database elements
 
-import '../styles/adminStyle.css'
+import React from 'react'; // Imports react framework
+import axios from 'axios'; // Imports axios (sends xml http requests)
+import { Modal, Button } from 'react-bootstrap' // Imports for modal (pop up), and react's own button
+
+import '../styles/adminStyle.css' // Imports styling
 
 let shown = true;
 let createdSort1 = false;
@@ -21,14 +28,15 @@ export default class Admin extends React.Component {
 
 
     state = {
-        name: "",
-        email: "",
-        tel: "",
-        mes: "",
-        id: "",
-        status: ""
+        name: "", // Stores the value of the name input field
+        email: "", // Stores the value of the email input field
+        tel: "", // Stores the value of the tel input field
+        mes: "", // Stores the value of the messsage input field
+        id: "", // Stores the value of the Id input field
+        status: "" // Stores the value of the status drop down selector
     }
 
+    // Whenever something is changed to any inputs, the change is saved to the variable storing the info
     handleInputChange = event => {
         const target = event.target
         const value = target.value
@@ -38,6 +46,7 @@ export default class Admin extends React.Component {
         })
     }
 
+    // When the submit button is pressed on the edit database section, call the updateData function with values of each input
     handleSubmit = event => {
         event.preventDefault();
         this.updateData(this.state.id, this.state.name, this.state.email, this.state.tel, this.state.mes, this.state.status);
@@ -45,46 +54,49 @@ export default class Admin extends React.Component {
 
     }
 
+    // Shows the popup confriming whether or not to delete selected database element
     showModal(){
         this.setState({show:!this.state.show})
     }
 
+    // Deletes the database objet based on the inputted id value
     handleDelete = () => {
         
-        axios.delete(`http://localhost:3000/${this.state.id}`, {
+        axios.delete(`http://localhost:3000/${this.state.id}`, { // Sends delete request to rest api
 
         });
-        window.location.reload(false);
+        window.location.reload(false); // Reloads the page
     }
 
+    // Updates the data of a select database element based on id to new inputted values
     updateData = (id, updatename, updateemail, updatephone, updatemessage, updatestatus) => {
 
-        if (updatename !== "") {
+        if (updatename !== "") { // If a new name value is enetered, update the name in the database
             axios.patch(`http://localhost:3000/${id}`, {
                 name: updatename
 
             })
         }
-        if (updateemail !== "") {
+        if (updateemail !== "") { // If a new email value is entered, update the email in the database
             axios.patch(`http://localhost:3000/${id}`, {
                 email: updateemail
 
             })
         }
-        if (updatephone !== "") {
+        if (updatephone !== "") { // If a new phone number value is entered, update the phone number in the database
             axios.patch(`http://localhost:3000/${id}`, {
                 phone: updatephone
 
             })
         }
-        if (updatemessage !== "") {
+        if (updatemessage !== "") { // If a new message value is entered, update the message in the database
             axios.patch(`http://localhost:3000/${id}`, {
                 message: updatemessage
 
 
             })
         }
-        if (updatestatus !== "") {
+        if (updatestatus !== "") { // If a new status is selected, update the status in the database
             axios.patch(`http://localhost:3000/${id}`, {
                 status: updatestatus
 
@@ -92,27 +104,29 @@ export default class Admin extends React.Component {
         }
 
 
-        window.location.reload(false);
+        window.location.reload(false); // Reload the page
     }
 
-    getData = () => {
+    // Retrieves data from database and generates table using data
+    getData = () => { 
         if(!createdSort1){
-            axios.get('http://localhost:3000').then(response => {
-                let table = document.getElementById("firstTable"); //gets table location from index.html
+            axios.get('http://localhost:3000').then(response => { // Retrieves all data from database
+                let table = document.getElementById("firstTable");
                 let data = response.data;
 
-                this.generateTable(table, data);
+                this.generateTable(table, data); // Calls generateTable function with inputs of the table being edited and the data to be used
             });
         }
     }
 
+    // Retrieves data from database and generates the sorted table using table
     getSortedData = () => {
-        if(!createdSort1){
+        if(!createdSort1){ // If the sorted table has not been created, create it
             axios.get('http://localhost:3000').then(response => {
                 let table2 = document.getElementById("sortedTable");
                 let data = response.data;
 
-                this.generateTable(table2,data.reverse());
+                this.generateTable(table2,data.reverse()); // Calls generateTable function with inputs of table being edited and data(reversed) to be used
                 table2.style.display = "none";
             });
             createdSort1 = true;
@@ -135,10 +149,11 @@ export default class Admin extends React.Component {
         return sorted;
     }
 
+    // Generates inputted table with inputted data
     generateTable = (table, data) => {
 
-        if (this.renderTable == true) {
-            for (let element of data) {
+        if (this.renderTable == true) { // If a table has not yet been rendered, render table
+            for (let element of data) { // Inputs data into table
                 let row = table.insertRow();
                 let _id = data._id;
                 for (_id in element) {
@@ -169,6 +184,7 @@ export default class Admin extends React.Component {
         }
     }
 
+    //Renders admin elements
     render() {
         return (
             <div id="adminDiv" >

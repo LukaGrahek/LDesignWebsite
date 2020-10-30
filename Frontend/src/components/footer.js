@@ -1,10 +1,10 @@
-//footer.js
-//Stores the HTML elements of the website footer and its functionalities:
+// footer.js
+// Stores the HTML elements of the website footer and its functionalities:
 // - Admin login button; redirects you to admin page if credentials are correct
 
 import React from 'react' //import for react framework
-import { Jumbotron, Modal, Button } from 'react-bootstrap' // import for jumbotron, modal (pop up), and reacts own button
-import '../styles/footerStyle.css'; //imports styling
+import { Jumbotron, Modal, Button } from 'react-bootstrap' // import for jumbotron, modal (pop up), and react's own button
+import '../styles/footerStyle.css'; // imports styling
 
 export default class Footer extends React.Component {
 
@@ -16,34 +16,34 @@ export default class Footer extends React.Component {
     }
 
     state = {
-        pass: "" //stores the value of the password input field
+        pass: "" // stores the value of the password input field
     }
 
-    //Whenever something is changed to any inputs, the change is saved to the variable storing the info
+    // Whenever something is changed to any inputs, the change is saved to the variable storing the info
     handleInputChange = event => {
         const target = event.target
         const value = target.value
         const name = target.name
         this.setState({
-            [name]: value, //updates the changed variable to its new value
+            [name]: value, // updates the changed variable to its new value
         })
     }
 
-    //When the submit button is pressed, this checks if the password is correct and redirect user if so, and warns them if not
+    // When the submit button is pressed, this checks if the password is correct and redirect user if so, and warns them if not
     handleSubmit = event => {
         event.preventDefault();
-        if (this.state.pass === process.env.ADMIN_PASSWORD) { // checks if entered password is correct
+        if (this.state.pass === process.env.ADMIN_PASSWORD) { // Xhecks if entered password is correct
             document.getElementById("modalBody").innerHTML = "Welcome";
             document.getElementById("modalBody").style.color = "Black";
-            window.open('http://localhost:8000/adminPage', '_blank'); // opens adminPage in new tab
+            window.open('http://localhost:8000/adminPage', '_blank'); // Opens adminPage in new tab
         }
-        else { //warns user the password is incorrect
+        else { // Warns user the password is incorrect
             document.getElementById("modalBody").innerHTML = "Error, Incorrect Password";
             document.getElementById("modalBody").style.color = "red";
         }
     }
 
-    //Function to display the admin login popup
+    // Function to display the admin login popup
     showModal = () => {
         this.setState({ show: !this.state.show })
     }
