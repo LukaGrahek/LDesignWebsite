@@ -1,7 +1,10 @@
-import React from "react"
-import '../styles/adminPageStyle.css'
+//adminPage
+//Stores and displays the emelents for the admin page
 
-import Admin from '../components/admin'
+import React from "react" //imports react framework
+import '../styles/adminPageStyle.css'//imports styling
+
+import Admin from '../components/admin'//imports the 'admin' element
 
 const AdminPage = () => {
 
