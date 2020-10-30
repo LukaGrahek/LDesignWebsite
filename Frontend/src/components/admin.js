@@ -151,14 +151,14 @@ export default class Admin extends React.Component {
         if(shown === false){
             let table2 = document.getElementById("sortedTable");
             let table = document.getElementById("firstTable");
-            table.style.display = "block";
+            table.style.display = "inline";
             table2.style.display = "none";
             shown = true;
         }
         else{
             let table2 = document.getElementById("sortedTable");
             let table = document.getElementById("firstTable");
-            table2.style.display = "block";
+            table2.style.display = "inline";
             table.style.display = "none";
             shown = false;
         }
