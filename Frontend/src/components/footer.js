@@ -2,7 +2,6 @@ import React from 'react'
 import {Jumbotron, Modal, Button} from 'react-bootstrap'
 import '../styles/footerStyle.css';
 
-
 export default class Footer extends React.Component {
 
     constructor(){

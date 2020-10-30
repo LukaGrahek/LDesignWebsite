@@ -5,6 +5,7 @@ import { Modal, Button } from 'react-bootstrap'
 import '../styles/adminStyle.css'
 
 let shown = true;
+let createdSort1 = false;
 
 export default class Admin extends React.Component {
 
@@ -95,22 +96,27 @@ export default class Admin extends React.Component {
     }
 
     getData = () => {
-        axios.get('http://localhost:3000').then(response => {
-            let table = document.getElementById("firstTable"); //gets table location from index.html
-            let data = response.data;
+        if(!createdSort1){
+            axios.get('http://localhost:3000').then(response => {
+                let table = document.getElementById("firstTable"); //gets table location from index.html
+                let data = response.data;
 
-            this.generateTable(table, data);
-        });
+                this.generateTable(table, data);
+            });
+        }
     }
 
     getSortedData = () => {
-        axios.get('http://localhost:3000').then(response => {
-            let table2 = document.getElementById("sortedTable");
-            let data = response.data;
+        if(!createdSort1){
+            axios.get('http://localhost:3000').then(response => {
+                let table2 = document.getElementById("sortedTable");
+                let data = response.data;
 
-            this.generateTable(table2,data.reverse());
-            table2.style.display = "none";
-        });
+                this.generateTable(table2,data.reverse());
+                table2.style.display = "none";
+            });
+            createdSort1 = true;
+        }
     }
 
     sortByDate = (data) =>{
@@ -143,7 +149,6 @@ export default class Admin extends React.Component {
                     }
                 }
             }
-            //this.renderTable = false;
         }
     }
 
