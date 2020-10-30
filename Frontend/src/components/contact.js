@@ -168,13 +168,13 @@ export default class Contact extends React.Component {
 
     }
 
-    // resets recaptcha
+    // Resets recaptcha
     resetCaptcha() {
         const recaptchaValue = recaptchaRef.current.reset();
         //this.props.resetCaptcha(recaptchaValue);
     }
 
-    //Renders contact elementss
+    // Renders contact elementss
     render() {
         return (
         <div class='contactSection'>
