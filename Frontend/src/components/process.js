@@ -1,7 +1,11 @@
-import React from 'react';
+// process
+// Stores the html elements of the process section
 
-import '../styles/processStyle.css'
+import React from 'react'; // Imports react framework
 
+import '../styles/processStyle.css' // Imports styling
+
+// Renders html elements
 const Process = () => {
     return (
         <div id='infoTable'>
