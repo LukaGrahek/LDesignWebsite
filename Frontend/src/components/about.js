@@ -1,8 +1,14 @@
-import React from 'react';
-import pic from '../photos/clientimage.jpg';
+// about
+// Stores about section html elements
+
+import React from 'react'; // Import react framework
+import pic from '../photos/clientimage.jpg'; // Import client's picture
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Jumbotron} from 'react-bootstrap'
-import '../styles/aboutStyle.css';
+import {Jumbotron} from 'react-bootstrap' // Imports jumbotron from react
+
+import '../styles/aboutStyle.css'; // Imports styling
+
+// Renders about section
 const About = () => {
     return(
         <Jumbotron id="Jtron">
