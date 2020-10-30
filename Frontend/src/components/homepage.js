@@ -1,13 +1,17 @@
-import React from 'react';
-import slide1 from '../photos/1bed.jpg';
-import slide2 from '../photos/2room.jpg';
-import slide3 from '../photos/3living.jpg';
-import slide4 from '../photos/4combo.jpg';
-//import slide5 from '../photos/5room.jpg';
-import '../styles/homepageStyle.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Carousel from 'react-bootstrap/Carousel';
+// homepage
+// Stores the homepage elemts (carousel)
 
+import React from 'react'; // Imports react framework
+import slide1 from '../photos/1bed.jpg'; // Imports photo for 1st slide
+import slide2 from '../photos/2room.jpg'; // Imports photo for 2nd slide
+import slide3 from '../photos/3living.jpg'; // Imports photo for 3rd slide 
+import slide4 from '../photos/4combo.jpg'; // Imports photo for 4th slide
+//import slide5 from '../photos/5room.jpg';
+import '../styles/homepageStyle.css'; // Imports syling
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-bootstrap/Carousel'; // Imports carousel from react
+
+// Renders the carousel and its html elements
 const HomeSlide = () => {
     return(
         //<img src={bed} alt="Beautifully designed Bed portrait" />
