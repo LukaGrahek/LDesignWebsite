@@ -157,7 +157,7 @@ export default class Admin extends React.Component {
                 let row = table.insertRow();
                 let _id = data._id;
                 for (_id in element) {
-                    if (_id !== "__v") {
+                    if (_id !== "__v") { //Skips adding version to the table
                         let cell = row.insertCell();
                         let text = document.createTextNode(element[_id]);
                         cell.appendChild(text);
