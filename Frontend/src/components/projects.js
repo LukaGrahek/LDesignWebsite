@@ -1,68 +1,78 @@
-import React, { Component } from 'react'
-import p1 from '../photos/projectIcons/proj1.jpg';
-import p2 from '../photos/projectIcons/proj2.jpg';
-import p3 from '../photos/projectIcons/proj3.jpg';
-import p4 from '../photos/projectIcons/proj4.jpg';
-import p5 from '../photos/projectIcons/proj5.jpg';
-import p6 from '../photos/projectIcons/proj6.jpg';
-import p7 from '../photos/projectIcons/proj7.jpg';
-import p8 from '../photos/projectIcons/proj8.jpg';
-import b1 from '../photos/BeforeAfter/before1.jpg';
-import a1 from '../photos/BeforeAfter/after1.jpg';
-import b2 from '../photos/BeforeAfter/before2.jpg';
-import a2 from '../photos/BeforeAfter/after2.jpg';
-import b3 from '../photos/BeforeAfter/before3.jpg';
-import a3 from '../photos/BeforeAfter/after3.jpg';
-import b4 from '../photos/BeforeAfter/before4.jpg';
-import a4 from '../photos/BeforeAfter/after4.jpg';
-import {Button, Jumbotron, Modal} from 'react-bootstrap';
-import BeforeAfterSlider from 'react-before-after-slider';
-import '../styles/projectsStyle.css';
-//e
+import React, { Component } from 'react' //import react
+import p1 from '../photos/projectIcons/proj1.jpg'; //import icon image for project 1
+import p2 from '../photos/projectIcons/proj2.jpg'; //import icon image for project 2
+import p3 from '../photos/projectIcons/proj3.jpg'; //import icon image for project 3
+import p4 from '../photos/projectIcons/proj4.jpg'; //import icon image for project 4
+import p5 from '../photos/projectIcons/proj5.jpg'; //import icon image for project 5
+import p6 from '../photos/projectIcons/proj6.jpg'; //import icon image for project 6
+import p7 from '../photos/projectIcons/proj7.jpg'; //import icon image for project 7
+import p8 from '../photos/projectIcons/proj8.jpg'; //import icon image for project 8
+import b1 from '../photos/BeforeAfter/before1.jpg'; // import before image for proj1
+import a1 from '../photos/BeforeAfter/after1.jpg';  // import after image for proj1
+import b2 from '../photos/BeforeAfter/before2.jpg'; // import before image for proj2
+import a2 from '../photos/BeforeAfter/after2.jpg';  // import after image for proj2
+import b3 from '../photos/BeforeAfter/before3.jpg'; // import before image for proj3
+import a3 from '../photos/BeforeAfter/after3.jpg';  // import after image for proj3
+import b4 from '../photos/BeforeAfter/before4.jpg'; // import before image for proj4
+import a4 from '../photos/BeforeAfter/after4.jpg';  // import after image for proj4
+import {Button, Jumbotron, Modal} from 'react-bootstrap'; // import Button, Jumbotron, and Modal libraries from  react-bootstrap
+import BeforeAfterSlider from 'react-before-after-slider'; // import the before and after slider libraries from react-before-after-slider
+import '../styles/projectsStyle.css'; // import CSS Style for this page
+
+//Projects class
 class Projects extends Component{
 
+    
     constructor(){
         super()
         this.state={
-            show1:false,
-            show2: false,
-            show3: false,
-            show4: false,
-            show5: false,
-            show6: false,
-            show7: false,
-            show8: false
+            show1:false,  //if pop-up (Modal) for project 1 is being shown
+            show2: false, //if pop-up (Modal) for project 2 is being shown
+            show3: false, //if pop-up (Modal) for project 3 is being shown
+            show4: false, //if pop-up (Modal) for project 4 is being shown
+            show5: false, //if pop-up (Modal) for project 5 is being shown
+            show6: false, //if pop-up (Modal) for project 6 is being shown
+            show7: false, //if pop-up (Modal) for project 7 is being shown
+            show8: false  //if pop-up (Modal) for project 8 is being shown
         }
     }
 
+    //if the shown state of project 1 is true it will be set to false and hidden, otherwise it will be set to true and shown
     showModal1(){
         this.setState({show1:!this.state.show1})
     }
 
+    //if the shown state of project 2 is true it will be set to false and hidden, otherwise it will be set to true and shown
     showModal2(){
         this.setState({show2:!this.state.show2})
     }
 
+    //if the shown state of project 3 is true it will be set to false and hidden, otherwise it will be set to true and shown
     showModal3(){
         this.setState({show3:!this.state.show3})
     }
 
+    //if the shown state of project 4 is true it will be set to false and hidden, otherwise it will be set to true and shown
     showModal4(){
         this.setState({show4:!this.state.show4})
     }
 
+    //if the shown state of project 5 is true it will be set to false and hidden, otherwise it will be set to true and shown
     showModal5(){
         this.setState({show5:!this.state.show5})
     }
 
+    //if the shown state of project 6 is true it will be set to false and hidden, otherwise it will be set to true and shown
     showModal6(){
         this.setState({show6:!this.state.show6})
     }
 
+    //if the shown state of project 7 is true it will be set to false and hidden, otherwise it will be set to true and shown
     showModal7(){
         this.setState({show7:!this.state.show7})
     }
 
+    //if the shown state of project 8 is true it will be set to false and hidden, otherwise it will be set to true and shown
     showModal8(){
         this.setState({show8:!this.state.show8})
     }

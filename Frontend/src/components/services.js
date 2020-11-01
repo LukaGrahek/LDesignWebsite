@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react';   //import react
+import 'bootstrap/dist/css/bootstrap.min.css'; //import default boostrap CSS for the Button, and Jumbotron
+import {Jumbotron,Button} from 'react-bootstrap' // Import Button and Jumbotron from react-bootstrap
+import '../styles/servicesStyle.css'; // import CSS Style for this page
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Jumbotron,Button} from 'react-bootstrap'
-import '../styles/servicesStyle.css';
-
+//when the contact button is clicked at the bottom of the services page, the user will be scrolled down to the contact section
 const scrollContact = () =>{
-    
     window.scrollTo({top: 10000, behavior: 'smooth'});
  };
 
