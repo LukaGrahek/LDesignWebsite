@@ -1,3 +1,8 @@
+/**
+ * Services Section: this section will display Leda Litricin's available services,
+ * and will include a button that will send the user to the contact section.
+ */
+
 import React from 'react';   //import react
 import 'bootstrap/dist/css/bootstrap.min.css'; //import default boostrap CSS for the Button, and Jumbotron
 import {Jumbotron,Button} from 'react-bootstrap' // Import Button and Jumbotron from react-bootstrap

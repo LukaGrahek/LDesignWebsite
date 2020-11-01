@@ -1,3 +1,10 @@
+
+/**
+ * Projects section: This section displays 8 of Leda Litricin's most prized projects.
+ * Each project, when clicked on, will display detailed information about it using a 
+ * Modal(pop-up), 4 projects include before and after sliders to display the transformation.
+ */
+
 import React, { Component } from 'react' //import react
 import p1 from '../photos/projectIcons/proj1.jpg'; //import icon image for project 1
 import p2 from '../photos/projectIcons/proj2.jpg'; //import icon image for project 2

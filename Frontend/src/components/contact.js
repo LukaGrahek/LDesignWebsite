@@ -1,61 +1,66 @@
-// contact
-// Stores html elements of the website contact section and its functionalities:
-// - Takes contact inormation from clients and inputs them into database
-
+/**
+ * Contact Section:
+ * Stores html elements of the website contact section and its functionalities:
+ * Takes contact inormation from clients and inputs them into database
+ */
 import React from 'react'; // Import react framework
 import axios from 'axios'; // Imports axios (sends xml http requests)
 import ReCAPTCHA from "react-google-recaptcha"; // Imports ReCAPTCHA api
 
 import '../styles/contactStyle.css' // Imports styling
 
-const recaptchaRef = React.createRef();
+const recaptchaRef = React.createRef(); // ref for the ReCaptcha
 
-let recapVal = false;
-let keep = "hidden";
+let recapVal = false; // wether or not the ReCaptcha has been succesfully completed
+let keep = "hidden"; // wether or not the ReCaptcha is being displayed
+
+//This function checks the validity of the phonenumber inpputed by the user
 function phonenumber(c){
-    let count = 0;
-    for (let position = 0; position < c.length; position++) {
-      
+    let count = 0; //this counts the amount of numbers inputted by the user. 10-16 numbers are allowed
+    for (let position = 0; position < c.length; position++) { //for each character from the users input
+
+        /**
+         * 1 is added to the character incase it is a 0, when moduloed by 13, any number will produce a value greater than 0.
+         * This is used to check whether or not the chracter is a number, as a non-number would return the value NaN (not a number)
+         * If the space is left blank, it will be counted as a 0, so there is an added  && to make sure that  spaces are being counted as
+         * a number.
+         */
        if ((c.charAt(position)+1)%13>0 && c.charAt(position)%13 != NaN && c.charAt(position) != " ")
          {
             count += 1;
-
          }
-         
+        //sometimes the number 9 is counted as a string, this makes sure that 9 is counted as a number.
         if(c.charAt(position) === "9"){
-
             count += 1;
         }
      }
-
+    //if the uppercase version of the user's input is different to the lowercase version that measn that there are letters, and the phone number is invalid
+    //if the number count is less than 10 or more than 16 this is an invalid phone number
     if(c.toLowerCase() === c.toUpperCase() && count>=10 && count<=16){
-
         return true;
     } 
     else{
-
-      
         return false;
     }
 }
 
 function nameCheck(c){
-    let count = 0;
-    for (let position = 0; position < c.length; position++) {
-      
+    let count = 0;// amount of letters or symbols in the users name input (must remain 0 to be a valid name)
+    for (let position = 0; position < c.length; position++) { // for every chracter in the users input in the name box
+
+       //if the chracter lower case is equal to itself as an uppracase, that means that it is either a symbol or number and the name is invalid
+       //spaces are allowed in the name box, and are excluded.
        if (c.charAt(position).toLowerCase() === c.charAt(position).toUpperCase() && c.charAt(position) != " ")
          {
             count += 1;
-
          }
      }
 
+    //if there are no numbers or symbols in the users name, it will count as a valid name, otherwise the name will not be accepted.
     if(count === 0){
-
         return true;
     } 
     else{
-      
         return false;
     }
 }
@@ -65,10 +70,10 @@ export default class Contact extends React.Component {
 
     constructor(props) {
         super(props);
-        this.recaptchaRef = React.createRef();
+        this.recaptchaRef = React.createRef(); //creates the ref for the ReCaptcha
         this.state = {
-            message: "",
-            good: ""
+            message: "", // red message displayed to the user if any input field or request (ReCaptcha) is invalid.
+            good: "" //success and thank you message to be displayed to the user upon completion of their submition.
         }
       }
  
@@ -93,22 +98,27 @@ export default class Contact extends React.Component {
     // When the submit button is pressed, check if correct data is entered, display recaptcha, once all is complete, send data to database
     handleSubmit = event => {
         event.preventDefault()
-        var x = document.getElementById("recapid");
+        var x = document.getElementById("recapid"); //HTML ReCaptcha element (used to hide and show the ReCaptcha)
         
-
+        //if the submit button is pressed when the ReCaptcha is hidden, it will be displayed with a message indicated the user to complete it
         if (keep === "hidden") {
+            //if ReCaptcha is not already complete if will display the please complete message
             if(!recapVal){
                 this.setState({ good: "Please complete the reCAPTCHA"});
             }
             console.log("hello " + keep);
             keep = "visible";
             x.style.visibility = "visible";
-            
-        } else {
+           
+        } else { // if the submit button is pressed and the ReCaptcha IS displayed
+
+            //if the ReCaptcha still is not complete the user will be asked to complete it
             if(!recapVal){
             this.setState({ good: "Please complete the reCAPTCHA"});
             }
-            if(phonenumber(this.state.tel) && nameCheck(this.state.name) && recapVal){ // If all the data is correct and recaptcha is complete, send data to databse
+
+            // If all the input fields are valid, and the ReCaptcha is complete, the form will be sent to the database
+            if(phonenumber(this.state.tel) && nameCheck(this.state.name) && recapVal){ 
                 this.setState({ good: ""});
                 this.setState({ message: ""});
                 this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
@@ -118,23 +128,20 @@ export default class Contact extends React.Component {
                 keep = "hidden";
                 recapVal = false;
             }
+            //if any field or ReCaptcha is invalid
             else{
                 this.setState({ good: ""});
 
-                if(!nameCheck(this.state.name)){  // If the name does not make sense, warns user to enter a proper name
+                if(!nameCheck(this.state.name)){  // If the name is invalid, warns user to enter a proper name
                     this.setState({ message: "Please enter a proper name."});
-
                 }
 
-                if(!phonenumber(this.state.tel)){ // If the phone number does not make sense, warns user to enter a proper phone number
-                    
+                if(!phonenumber(this.state.tel)){ // If the phone number is invalid, warns user to enter a proper phone number
                     this.setState({ message: "Please enter a proper phone number."});
-
                 }
 
-                if(!recapVal){ // If recaptcha is not completed, warns user to complete the recaptcha
+                if(!recapVal){ // If ReCaptcha is not completed, warns user to complete the recaptcha
                     this.setState({ message: "Please complete the reCAPTCHA."});
-
                 }
             } 
         }
@@ -150,9 +157,7 @@ export default class Contact extends React.Component {
             message: submitmessage
         })
         .then(response => {
-
             this.setState({ good: "Your form has been sent succesfully, Thank You."}); // Thanks user for input
-
             console.log(response);
         })
         .catch(err => {
@@ -161,7 +166,7 @@ export default class Contact extends React.Component {
         });
     };
 
-    // 
+    //When the Recaptcha is succesfully complete
     onChange() {
         recapVal =true;
         console.log("ReCaptcha Complete");
