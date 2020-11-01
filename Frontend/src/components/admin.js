@@ -11,13 +11,14 @@ import { Modal, Button } from 'react-bootstrap' // Imports for modal (pop up), a
 
 import '../styles/adminStyle.css' // Imports styling
 
-let shown = true;
-let createdSort1 = false;
+let shown = true; // the tables are sorted either oldest to newest or newest to oldest, this boolean dictates which one is shown
+let createdSort1 = false; //after the tables are made, this will be set to true. The tables can only be made once.
 
 export default class Admin extends React.Component {
 
-    renderTable = true;
+    renderTable = true; // if the table has been rendered properly (set to false if there is an error)
 
+    //constructors in order to change message area or good area
     constructor(props) {
         super(props);
         this.state = {
@@ -133,19 +134,19 @@ export default class Admin extends React.Component {
         }
     }
 
+    // returns sorted forms by date( oldest to newest)
     sortByDate = (data) =>{
-        
-        for(let element of data){
-            let newDate = ""
-            for(let i = 0; i < element.date.length; i++){
-                if (element.date.charAt(i) >= '0' && element.date.charAt(i) <= '9') {
-                   newDate += element.date.charAt(i);
+        for(let element of data){  //for each form (each row in the table)
+            let newDate = ""       //new date that will be composed only of numbers
+            for(let i = 0; i < element.date.length; i++){ //for every charcter of the original date
+                if (element.date.charAt(i) >= '0' && element.date.charAt(i) <= '9') { //if that character is a number
+                   newDate += element.date.charAt(i); //add the number to the end of the new date string
                 }
             }
-            element.date = parseInt(newDate);
+            element.date = parseInt(newDate); //change the date in the array to the new date that is a number
         }
-        let sorted = data.sort(function(a, b) {return a.date - b.date})
-        sorted = data.reverse();
+        let sorted = data.sort(function(a, b) {return a.date - b.date}) //sort the array based on the date values from high to low (newest to oldest)
+        sorted = data.reverse(); //create new array that is sorted from oldest to newest
         return sorted;
     }
 
@@ -167,15 +168,16 @@ export default class Admin extends React.Component {
         }
     }
 
+    //switches the chart sorting by date between options: oldest to newest, and newest to oldest
     sortDateButton = () =>{
-        if(shown === false){
+        if(shown === false){ //if the oldest to newest table is shown, it will hide it and show the other table.
             let table2 = document.getElementById("sortedTable");
             let table = document.getElementById("firstTable");
             table.style.display = "inline";
             table2.style.display = "none";
             shown = true;
         }
-        else{
+        else{ // if the newest to oldest table  is shown, it will be hidden and the other table will be revealed.
             let table2 = document.getElementById("sortedTable");
             let table = document.getElementById("firstTable");
             table2.style.display = "inline";

@@ -3,7 +3,7 @@
 
 import React from 'react'; // Import react framework
 import pic from '../photos/clientimage.jpg'; // Import client's picture
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; //Import default css for react-bootstrap
 import {Jumbotron} from 'react-bootstrap' // Imports jumbotron from react
 
 import '../styles/aboutStyle.css'; // Imports styling
