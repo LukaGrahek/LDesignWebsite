@@ -12,44 +12,17 @@ const Process = () => {
             <h1 id='ProcessTitle'>Process</h1>
             <table>
                 <tr>
-                    <th id='left'>O PROCESU</th>
-                    <th id='center'>PRISTUP POSLU</th>
-                    <th id='right'>O MOJIM KLIJENTIMA</th>
+                    <th id='left'>ABOUT THE PROCESS</th>
+                    <th id='center'>MANAGEMENT</th>
+                    <th id='right'>IMPLEMENTING</th>
                 </tr>
                 <tr>
-                    <td id='left'>Proces saradnje uvek zapocinje upoznavanjem kroz otvoreni razgovor o tome ko je moj Klijent, I kako
-                    On/Ona zele da zive. Zelim da cujem sve o vasem buducem prostoru kao I o vasim potrebama,
-                    sklonostima, ukusima, zeljama, ocekivanjima I snovima... Uspostavljanje otvorenog dijaloga kroz
-                    konstruktivnu razmenu informacija, ideja I misljenja, vode ka uspostavljanju medjusobnog razumevanja,
-                    poverenja I skladne saradnje . Vazno je da budite iskreni, opusteni , otvoreni za nove ideje i da
-                    dopustite/prepustite profesionalcu da vas savetuje I vodi kroz ceo process. Iz takve saradnje proizilaze i
-                    najbolja resenja: funkcionalni, autenticni, pazljivo krojeni prostori/ambijenti u kojima cete moci da se
-                    prepoznate. Svaki novi projekat, za mene predstavlja I novi izazov I zapravo daje unikatan odgovor (u
-                        smislu funkcije I stila) na pocetno,vrlo licno I kompleksno pitanje, ko ste Vi I kako zelite da zivite. </td>
+                    <td id='left'>The collaboration process always begins with getting to know each other through an open conversation about who my Client is, and how He / She wants to live. I want to hear everything about your future space as well as your needs, preferences, tastes, desires, expectations and dreams ... Establishing an open dialogue through a constructive exchange of information, ideas and opinions, leads to the establishment of mutual understanding, trust and harmonious cooperation. It is important to be honest, relaxed, open to new ideas and to allow / let a professional advise and guide you through the whole process. The best solutions come from such cooperation: functional, authentic, carefully tailored spaces / ambiences in which you will be able to recognize yourself. Each new project, for me, represents a new challenge and actually gives a unique answer (in terms of function and style) to the initial, very personal and complex question, who are you and how do you want to live. </td>
 
-                    <td id='center'>Tokom saradnje, moj pristup poslu, klijentima I svim saradnicima je prijateljski ali istovremeno I
-                    organizovan. Velika posvecenost svakom pojedinacnom klijentu I projektu, dostupnost I fleksibilnost
-                    tokom saradnje, kao i licni I profesionalni integritet , su principi od kojih nikada ne odustajem I na koje
-                    mozete da racunate. Takodje, jedan od mojih vaznih ciljeva je da planirani predlozi I resenja budu
-                    uklopljeni u predvidjeni budzet. Budzeti mogu da variraju, narocito kada govorimo o opremanju. Lepo je
-                    raditi sa visokim budzetom, ali uz pravilno resenje I odabir, moguce je I sa manjim sredstvima postici
-                    vrlo lep, atraktivan ambijent, koji ce u potpunosti zadovoljiti sve kriterijume.
-                    Smatram da enterijeri moraju biti prostori nastali kao plod funkcije po meri coveka a ne puke kulise.
-                    Kreirani prostori I ambijenti jesu setovi-scene, ali kreirani ne za teatar ,vec za stvarni zivot I stvarne
-                    ljude…Krojeni po meri, takvi enterijeri u potpunosti reflektuju svoje buduce korisnike. Svojom
-                    autenticnom lepotom I znacenjem oni doticu njihova srca (pa I moje ) u najsirem I najlepsem mogucem
-                    smislu. Veoma volim to sto radim i nastojim da svojim klijentima prenesem entuzijazam I znanje a da im
-                    pritom pruzim potrebnu podrsku u svakoj ideji , zelji i koraku. Moj osnovni a ujedno I najvazniji cilj je
-                    da budete zadovoljni celim procesom saradnje kao I da budete potpuno iznenadjeni I istinski
-                    odusevljeni krajnjim rezultatom ! </td>
+                    <td id='center'>During the cooperation, my approach to work, clients and all associates is friendly but at the same time organized. Great commitment to each individual client and project, availability and flexibility during the cooperation, as well as personal and professional integrity, are principles that I never give up and that you can count on. Also, one of my important goals is to fit the planned proposals and solutions into the planned budget. Budgets can vary, especially when it comes to furnishing. It is nice to work with a high budget, but with the right solution and choice, it is possible to achieve a very nice, attractive environment with smaller funds, which will fully meet all the criteria.
+I believe that interiors must be spaces created as a result of a function tailored to man and not mere scenery. Created spaces and ambiences are sets-scenes, but created not for theater, but for real life and real people… Tailor-made, such interiors fully reflect their future users. With their authentic beauty and meaning, they touch their hearts (including mine) in the broadest and most beautiful possible sense. I really like what I do and I try to pass on my enthusiasm and knowledge to my clients, while providing them with the necessary support in every idea, wish and step. My basic and at the same time the most important goal is to be satisfied with the whole process of cooperation as well as to be completely surprised and truly delighted with the end result! </td>
 
-                    <td id='right'>Moji klijenti su uglavnom porodicni ljudi ili pojedinci koji se aktivno bave svojim profesijama I koji zive
-                    svoje uzurbane gradske zivote... U 100% slucajeva, oni se javljaju preko preporuke prijatelja ili bivsih
-                    zadovoljnih klijenata. To su ljudi koji imaju nadprosecna ocekivanja povodom funkcionalno-estetskih
-                    resenja prostora u kojima zele da zive ili koje zele da izdaju/prodaju. Oni shvataju da im je potrebna
-                    profesionalna pomoc u dostizanju tog cilja a ujedno zele da izbegnu greske , losa resenja I da sacuvaju
-                    svoje vreme, zivce I novac. Pored toga, oni znaju da je to I najbolji nacin da podignu vrednost svoje
-                    nekretnine.</td>
+                    <td id='right'> My clients are mostly family people or individuals who are actively engaged in their professions and who live their hectic city lives ... In 100% of cases, they respond through the recommendation of friends or former satisfied clients. These are people who have above-average expectations regarding the functional-aesthetic solutions of the space in which they want to live or which they want to rent / sell. They understand that they need professional help in achieving that goal and at the same time they want to avoid mistakes, bad solutions and save their time, nerves and money. In addition, they know that this is the best way to raise the value of their property.</td>
                 </tr>
             </table>
         </div>

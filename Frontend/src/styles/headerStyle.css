@@ -32,7 +32,7 @@ header {
     cursor: pointer;
 }
 
-#languageSelect {
+.languageSelect {
     padding-right:0.3%;
 }
 
@@ -52,4 +52,9 @@ li {
 li:hover {
     cursor: pointer;
     color: white;
+}
+
+#ignoreLS{
+    cursor: default;
+    color: gray;
 }

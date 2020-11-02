@@ -4,8 +4,8 @@
 
 import React from 'react' // imports react framework
 
-import Header from '../components/header' // Imports the header element
-import Footer from '../components/footer' // Imports the footer element
+import Header from '../rscomponents/rsheader' // Imports the header element
+import Footer from '../rscomponents/rsfooter' // Imports the footer element
 
 // Renders the layout
 const Layout = (props) => {

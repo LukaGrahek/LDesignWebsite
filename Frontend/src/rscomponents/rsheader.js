@@ -5,7 +5,6 @@
 
 import React from 'react' // Imports react framework
 import { Link } from 'react-scroll'// Imports Link from react
-import redirectEN from '../pages';
 
 
 import '../styles/headerStyle.css' // Imports styling
@@ -45,8 +44,9 @@ const scrollTop = () =>{
     window.scrollTo({top: docHeight, behavior: 'smooth'});
  };
 
- const redirectRS = () =>{
-    window.location.replace("http://localhost:8000/rs/");
+ //redirects to the english website version
+ const redirectEN = () =>{
+    window.location.replace("http://localhost:8000/en/");
  };
 
  // Renders header elements
@@ -59,44 +59,44 @@ const Header = () => {
             <ul>
                 <li>
                     <Link onClick={scrollTop} >
-                        HOME
+                        POCETAK
                     </Link>
                 </li>
                 <li>
                     <Link onClick={scrollAbout}>
-                        ABOUT
+                        O MENI
                     </Link>
                 </li>
                 <li>
                     <Link onClick={scrollServices}>
-                        SERVICES
+                        CIME SE BAVIM
                     </Link>
                 </li>
                 <li>
                     <Link onClick={scrollProjects}>
-                        PROJECTS
+                        PROJEKTI
                     </Link>
                 </li>
                 <li>
                     <Link onClick={scrollProcess}>
-                        PROCESS
+                        O PROCESU
                     </Link>
                 </li>
                 <li>
                     <Link onClick={scrollContact}>
-                        CONTACT
+                        KONTACT
                     </Link>
                 </li>
                 <li class="languageSelect">
-                    EN
+                    <Link onClick={redirectEN}>
+                        EN
+                    </Link>
                 </li>
-                <li class="languageSelect" id="ignoreLS">
+                <li  class="languageSelect" id="ignoreLS">
                     |
                 </li>
-                <li class="languageSelect">
-                <Link onClick={redirectRS}> 
+                <li  class="languageSelect">
                     SR
-                </Link>
                 </li>
             </ul>
         </header>
