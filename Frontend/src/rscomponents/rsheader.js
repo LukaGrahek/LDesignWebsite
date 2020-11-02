@@ -44,64 +44,69 @@ const scrollTop = () =>{
     window.scrollTo({top: docHeight, behavior: 'smooth'});
  };
 
- //redirects to the english website version
- const redirectEN = () =>{
-    window.location.replace("http://localhost:8000/en/");
- };
 
  // Renders header elements
-const Header = () => {
-    return (
-        <header id='Header' >
-            <h1 id= "clientTitle" onClick={scrollTop}>
-                L E D A     L I T R I C I N
-            </h1>
-            <ul>
-                <li>
-                    <Link onClick={scrollTop} >
-                        POCETAK
-                    </Link>
-                </li>
-                <li>
-                    <Link onClick={scrollAbout}>
-                        O MENI
-                    </Link>
-                </li>
-                <li>
-                    <Link onClick={scrollServices}>
-                        CIME SE BAVIM
-                    </Link>
-                </li>
-                <li>
-                    <Link onClick={scrollProjects}>
-                        PROJEKTI
-                    </Link>
-                </li>
-                <li>
-                    <Link onClick={scrollProcess}>
-                        O PROCESU
-                    </Link>
-                </li>
-                <li>
-                    <Link onClick={scrollContact}>
-                        KONTACT
-                    </Link>
-                </li>
-                <li class="languageSelect">
-                    <Link onClick={redirectEN}>
-                        EN
-                    </Link>
-                </li>
-                <li  class="languageSelect" id="ignoreLS">
-                    |
-                </li>
-                <li  class="languageSelect">
-                    SR
-                </li>
-            </ul>
-        </header>
-    )
-}
+ export default class redirectEN extends React.Component{
+
+    // componentDidMount(redirectEN)
+    // redirectEN = () => {
+    //     window.location.replace("http://localhost:8000/en/");
+    // }
+  
+    render() {
+            return (
+                <header id='Header' >
+                    <h1 id= "clientTitle" onClick={scrollTop}>
+                        L E D A     L I T R I C I N
+                    </h1>
+                    <ul>
+                        <li>
+                            <Link onClick={scrollTop} >
+                                POCETAK
+                            </Link>
+                        </li>
+                        <li>
+                            <Link onClick={scrollAbout}>
+                                O MENI
+                            </Link>
+                        </li>
+                        <li>
+                            <Link onClick={scrollServices}>
+                                CIME SE BAVIM
+                            </Link>
+                        </li>
+                        <li>
+                            <Link onClick={scrollProjects}>
+                                PROJEKTI
+                            </Link>
+                        </li>
+                        <li>
+                            <Link onClick={scrollProcess}>
+                                O PROCESU
+                            </Link>
+                        </li>
+                        <li>
+                            <Link onClick={scrollContact}>
+                                KONTACT
+                            </Link>
+                        </li>
+                        <li class="languageSelect">
+                            {/* <Link onClick={this.redirectEN()}>
+                                EN
+                            </Link> */}
+                            EN
+                        </li>
+                        <li  class="languageSelect" id="ignoreLS">
+                            |
+                        </li>
+                        <li  class="languageSelect">
+                            SR
+                        </li>
+                    </ul>
+                </header>
+         )
+    }
+  }
 
 
-export default Header
+

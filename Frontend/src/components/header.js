@@ -5,7 +5,7 @@
 
 import React from 'react' // Imports react framework
 import { Link } from 'react-scroll'// Imports Link from react
-import redirectEN from '../pages';
+
 
 
 import '../styles/headerStyle.css' // Imports styling
@@ -45,9 +45,6 @@ const scrollTop = () =>{
     window.scrollTo({top: docHeight, behavior: 'smooth'});
  };
 
- const redirectRS = () =>{
-    window.location.replace("http://localhost:8000/rs/");
- };
 
  // Renders header elements
 const Header = () => {
@@ -94,9 +91,10 @@ const Header = () => {
                     |
                 </li>
                 <li class="languageSelect">
-                <Link onClick={redirectRS}> 
+                {/* <Link onClick={redirectRS}> 
                     SR
-                </Link>
+                </Link> */}
+                SR
                 </li>
             </ul>
         </header>
