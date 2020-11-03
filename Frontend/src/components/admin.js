@@ -8,11 +8,14 @@
 import React from 'react'; // Imports react framework
 import axios from 'axios'; // Imports axios (sends xml http requests)
 import { Modal, Button } from 'react-bootstrap' // Imports for modal (pop up), and react's own button
+import ReactDOM from 'react-dom'
 
 import '../styles/adminStyle.css' // Imports styling
 
 let shown = true; // the tables are sorted either oldest to newest or newest to oldest, this boolean dictates which one is shown
 let createdSort1 = false; //after the tables are made, this will be set to true. The tables can only be made once.
+
+let globalData;
 
 export default class Admin extends React.Component {
 
@@ -114,7 +117,7 @@ export default class Admin extends React.Component {
             axios.get('http://localhost:3000').then(response => { // Retrieves all data from database
                 let table = document.getElementById("firstTable");
                 let data = response.data;
-
+                globalData = data;
                 this.generateTable(table, data); // Calls generateTable function with inputs of the table being edited and the data to be used
             });
         }
@@ -163,10 +166,43 @@ export default class Admin extends React.Component {
                         let text = document.createTextNode(element[_id]);
                         cell.appendChild(text);
                     }
+                    else{
+                        
+                        let x = 
+                        <input
+                        id = {element._id}
+                        class= "radioID"
+                        value={element._id}
+                        type="radio"
+                        name = "id"
+                        />
+                        let c = row.insertCell();
+                        ReactDOM.render(x,c);
+                    }
                 }
             }
         }
     }
+
+
+
+    radioButton = () =>{
+        
+        for(let element of globalData){
+            if(document.getElementById(element._id).checked){
+                document.getElementById("inputId").value = element._id
+            }
+
+        }
+
+    }
+
+    componentDidMount(){
+        window.addEventListener('click', (event) => {
+            this.radioButton();
+          });
+        }
+
 
     //switches the chart sorting by date between options: oldest to newest, and newest to oldest
     sortDateButton = () =>{
@@ -239,6 +275,9 @@ export default class Admin extends React.Component {
                         <th>
                             Date <button onClick = {this.sortDateButton}>sort</button>
                         </th>
+                        <th>
+                            Select
+                        </th>
                     </tr>
                     {this.getData()}
                 </table>
@@ -266,6 +305,9 @@ export default class Admin extends React.Component {
                         <th>
                             Date <button onClick = {this.sortDateButton}>sort</button>
                         </th>
+                        <th>
+                            Select
+                        </th>
                     </tr>
                     {this.getSortedData()}
                 </table>
@@ -280,7 +322,7 @@ export default class Admin extends React.Component {
                                 <th>
                                     <input
                                         type="text"
-                                        id="Id"
+                                        id="inputId"
                                         name="id"
                                         placeholder='Client ID'
                                         value={this.state.id}

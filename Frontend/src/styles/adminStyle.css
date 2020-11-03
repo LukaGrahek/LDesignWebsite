@@ -69,3 +69,8 @@
     display: inline-table;
     margin: 0;
 }
+
+.radioID{
+    height: 25px;
+    width: 25px;
+}
