@@ -13,7 +13,7 @@ const About = () => {
     return(
         <Jumbotron id="Jtron">
 
-                    <h1 id="AboutTitle">About</h1>
+                    <h1 id="AboutTitle">O Meni</h1>
                     <img id="pic" src={pic} alt="Leda Litricin" />
                     <p id ='aboutTXT'>
                          Born in Belgrade, I attended the study of Architecture in Belgrade and graduated in 2002 (M.Arch.). After graduation, I took and obtained a license as a responsible designer. During my studies, I spent two beautiful and significant years living in London (UK). 

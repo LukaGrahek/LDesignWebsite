@@ -47,9 +47,28 @@ const scrollTop = () =>{
 
 
  // Renders header elements
-const Header = () => {
-    return (
-        <header id='Header' >
+ export default class Header extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+           ready: false //when the website has finished building this will be set to true, used for redirects.
+        }
+    }
+
+    componentDidMount(){
+        this.ready = true; //sets to true after website is built
+    }
+
+    //redirects user to Serbian version of the website when clicked
+    redirectRS = () => {
+        if (this.ready===true){
+          window.location.replace("http://localhost:8000/rs/");
+        }
+      }
+
+    render() {
+        return (
+<header id='Header' >
             <h1 id= "clientTitle" onClick={scrollTop}>
                 L E D A     L I T R I C I N
             </h1>
@@ -91,15 +110,14 @@ const Header = () => {
                     |
                 </li>
                 <li class="languageSelect">
-                {/* <Link onClick={redirectRS}> 
+                <Link onClick={this.redirectRS}> 
                     SR
-                </Link> */}
-                SR
+                </Link>
                 </li>
             </ul>
         </header>
-    )
+        )
+      }
 }
 
 
-export default Header

@@ -58,3 +58,11 @@ li:hover {
     cursor: default;
     color: gray;
 }
+
+.heade{
+    width: 12ch;
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+}

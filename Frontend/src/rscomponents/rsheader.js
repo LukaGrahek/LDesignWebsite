@@ -47,12 +47,24 @@ const scrollTop = () =>{
 
  // Renders header elements
  export default class redirectEN extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+           ready: false //when the website has finished building this will be set to true, used for redirects.
+        }
+    }
 
-    // componentDidMount(redirectEN)
-    // redirectEN = () => {
-    //     window.location.replace("http://localhost:8000/en/");
-    // }
-  
+    componentDidMount(){
+        this.ready = true; //sets to true after website is built
+    }
+
+    //redirects user to Serbian version of the website when clicked
+    redirectEN = () => {
+        if (this.ready===true){
+          window.location.replace("http://localhost:8000/en/");
+        }
+      }
+
     render() {
             return (
                 <header id='Header' >
@@ -60,41 +72,40 @@ const scrollTop = () =>{
                         L E D A     L I T R I C I N
                     </h1>
                     <ul>
-                        <li>
+                        <li class = "heade">
                             <Link onClick={scrollTop} >
                                 POCETAK
                             </Link>
                         </li>
-                        <li>
+                        <li class = "heade" id = "meni">
                             <Link onClick={scrollAbout}>
                                 O MENI
                             </Link>
                         </li>
-                        <li>
+                        <li class = "heade">
                             <Link onClick={scrollServices}>
-                                CIME SE BAVIM
+                                SE BAVIM
                             </Link>
                         </li>
-                        <li>
+                        <li class = "heade">
                             <Link onClick={scrollProjects}>
                                 PROJEKTI
                             </Link>
                         </li>
-                        <li>
+                        <li class = "heade">
                             <Link onClick={scrollProcess}>
                                 O PROCESU
                             </Link>
                         </li>
-                        <li>
+                        <li class = "heade">
                             <Link onClick={scrollContact}>
                                 KONTACT
                             </Link>
                         </li>
                         <li class="languageSelect">
-                            {/* <Link onClick={this.redirectEN()}>
+                            <Link onClick={this.redirectEN}>
                                 EN
-                            </Link> */}
-                            EN
+                            </Link>
                         </li>
                         <li  class="languageSelect" id="ignoreLS">
                             |

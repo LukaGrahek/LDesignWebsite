@@ -11,6 +11,7 @@ export default class redirectEN extends React.Component{
     }
 }
 
+//After building website, this instantly redirects the user to /en/ version of the website (english version)
   componentDidMount(){
     this.ready = true;
     this.redirect();
