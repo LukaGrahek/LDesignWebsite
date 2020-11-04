@@ -191,10 +191,9 @@ export default class Admin extends React.Component {
         for(let element of globalData){
             if(document.getElementById(element._id).checked){
                 document.getElementById("inputId").value = element._id
+                this.state.id = element._id
             }
-
         }
-
     }
 
     componentDidMount(){
