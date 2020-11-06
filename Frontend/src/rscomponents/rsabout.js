@@ -13,7 +13,7 @@ const About = () => {
     return(
         <Jumbotron id="Jtron">
 
-                    <h1 id="AboutTitle">About</h1>
+                    <h1 id="AboutTitle">O Meni</h1>
                     <img id="pic" src={pic} alt="Leda Litricin" />
                     <p id ='aboutTXT'>
                         Rodjena u Beogradu. Pohadjala studije Arhitekture u Beogradu I diplomirala 2002 godine (M.Arch.)  Na fakultetu  pohadjala izabrano dvogodisnje usmerenje u oblasti  Enterijerijerskog dizajna . Nakon diplomiranja, polagala I stekla licencu odgovornog projektanta. Tokom studija provela  2 lepe i znacajne godine zivota u Londonu (UK). 

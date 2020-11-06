@@ -23,8 +23,8 @@ const HomeSlide = () => {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h3 id="slideT1">City Side Bedroom</h3>
+                <p>This Beutifully designed Bedroom is part of a full apartment transformation.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -35,8 +35,8 @@ const HomeSlide = () => {
                 />
 
                 <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>Modern Warmth Kitchen</h3>
+                <p>This Kitchen is part of an amazing condo which was fully renovated.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

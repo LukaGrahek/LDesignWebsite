@@ -20,7 +20,7 @@ const Review = () => {
             </Carousel.Item>
             <Carousel.Item>
                 <div class='reviewFrame'>
-                    <h2>Apsolutno sam voleo da radim sa Ledom i njenim fenomenalnim timom. Čitavu obnovu učinili su neverovatnim iskustvom. Svakako bih ih preporučio svima. Oni su profesionalni, ali podjednako dopadljivi. Moj stan je bio potpuno srušen i redizajniran, ali činilo se da je čitav postupak bio gotovo bez napora. Jane je postala prijateljica i zapravo mi je nedostajao tim kada je projekat završen. -Borag Heimlečić</h2>
+                    <h2>Apsolutno sam voleo da radim sa Ledom i njenim fenomenalnim timom. Čitavu obnovu učinili su neverovatnim iskustvom. Svakako bih ih preporučio svima. Oni su profesionalni, ali podjednako dopadljivi. Moj stan je bio potpuno srušen i redizajniran, ali činilo se da je čitav postupak bio gotovo bez napora. -Borag Heimlečić</h2>
                 </div>
             </Carousel.Item>
             </Carousel>

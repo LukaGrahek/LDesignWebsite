@@ -17,6 +17,8 @@ let createdSort1 = false; //after the tables are made, this will be set to true.
 
 let globalData;
 
+let numID = 0;
+
 export default class Admin extends React.Component {
 
     renderTable = true; // if the table has been rendered properly (set to false if there is an error)
@@ -118,7 +120,7 @@ export default class Admin extends React.Component {
                 let table = document.getElementById("firstTable");
                 let data = response.data;
                 globalData = data;
-                this.generateTable(table, data); // Calls generateTable function with inputs of the table being edited and the data to be used
+                this.generateTable(table, data, 0); // Calls generateTable function with inputs of the table being edited and the data to be used
             });
         }
     }
@@ -130,7 +132,7 @@ export default class Admin extends React.Component {
                 let table2 = document.getElementById("sortedTable");
                 let data = response.data;
 
-                this.generateTable(table2,data.reverse()); // Calls generateTable function with inputs of table being edited and data(reversed) to be used
+                this.generateTable(table2,data.reverse(),1); // Calls generateTable function with inputs of table being edited and data(reversed) to be used
                 table2.style.display = "none";
             });
             createdSort1 = true;
@@ -154,7 +156,7 @@ export default class Admin extends React.Component {
     }
 
     // Generates inputted table with inputted data
-    generateTable = (table, data) => {
+    generateTable = (table, data, numID) => {
 
         if (this.renderTable == true) { // If a table has not yet been rendered, render table
             for (let element of data) { // Inputs data into table
@@ -170,9 +172,8 @@ export default class Admin extends React.Component {
                         
                         let x = 
                         <input
-                        id = {element._id}
+                        id = {element._id + numID}
                         class= "radioID"
-                        value={element._id}
                         type="radio"
                         name = "id"
                         />
@@ -187,9 +188,15 @@ export default class Admin extends React.Component {
 
 
     radioButton = () =>{
-        
+        console.log("2");
         for(let element of globalData){
-            if(document.getElementById(element._id).checked){
+            if(document.getElementById(element._id+0).checked){
+                document.getElementById("inputId").value = element._id
+                this.state.id = element._id
+            }
+        }
+        for(let element of globalData){
+            if(document.getElementById(element._id+1).checked){
                 document.getElementById("inputId").value = element._id
                 this.state.id = element._id
             }

@@ -15,12 +15,12 @@ const Review = () => {
         <Carousel id="reviews">
             <Carousel.Item>
                 <div class='reviewFrame'>
-                    <h2>Leda and her team were great. They really took the time to understand my style and helped me express myself in my home. The team's attention to detail was phenomenal. They did an amazing job blending my old and new furniture and decor. I'd definitely recommend them.  -Lincornea Bosch</h2>
+                    <h2>Leda and her team were great. They really took the time to understand my style and helped me express myself in my home. The team's attention to detail was phenomenal. They did an amazing job blending my old and new furniture and decor etc. I would definitely recommend them, thank's alot  for  everything  Leda!!!              -Lincornea Bosch</h2>
                 </div>
             </Carousel.Item>
             <Carousel.Item>
                 <div class='reviewFrame'>
-                    <h2>I absolutely loved working with Leda and her phenomenal team. They made the entire renovation an amazing experience. I would definitely recommend them to anyone. They are professional yet equally personable. My condo reno was a total demolition and re-design but the entire process seemed almost effortless. Jane became a friend and I actually missed the team once the project was finished. -Borag Heimlecic</h2>
+                    <h2>I absolutely loved working with Leda and her phenomenal team. They made the entire renovation an amazing experience. I would definitely recommend them to anyone. They are professional yet equally personable. My condo reno was a total demolition and re-design but the entire process seemed almost effortless.  -Borag Heimlecic</h2>
                 </div>
             </Carousel.Item>
             </Carousel>
