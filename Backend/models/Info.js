@@ -1,6 +1,9 @@
-const mongoose = require('mongoose');
+// info.js
+// Defines the schema/format of the objects which will be saved to the database.
 
-const ContactInfoSchema = mongoose.Schema({
+const mongoose = require('mongoose'); //Imports the mongoose library which will be used for defining the schema
+
+const ContactInfoSchema = mongoose.Schema({ // Defines the schema
     name: {
         type: String,
         required: true
@@ -31,4 +34,4 @@ const ContactInfoSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Info', ContactInfoSchema)
+module.exports = mongoose.model('Info', ContactInfoSchema); //exports the schema
