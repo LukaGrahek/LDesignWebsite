@@ -47,8 +47,8 @@ const HomeSlide = () => {
                 />
 
                 <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <h3>Kitchen Bathroom Combo</h3>
+                <p>Designed with precision and with space taken into account.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -59,8 +59,8 @@ const HomeSlide = () => {
                 />
 
                 <Carousel.Caption>
-                <h3>Fourth slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <h3>Elegant Living Room</h3>
+                <p>With peace and love this room was designed with space and movement.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             {/* <Carousel.Item>

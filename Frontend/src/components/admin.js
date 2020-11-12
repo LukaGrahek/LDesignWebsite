@@ -15,9 +15,9 @@ import '../styles/adminStyle.css' // Imports styling
 let shown = true; // the tables are sorted either oldest to newest or newest to oldest, this boolean dictates which one is shown
 let createdSort1 = false; //after the tables are made, this will be set to true. The tables can only be made once.
 
-let globalData;
+let globalData; //Data gotten from database for sorting use.
 
-let numID = 0;
+let numID = 0; //Id of a specific data form, used for linking the ID select button with the corresponding form
 
 export default class Admin extends React.Component {
 
@@ -163,21 +163,21 @@ export default class Admin extends React.Component {
                 let row = table.insertRow();
                 let _id = data._id;
                 for (_id in element) {
-                    if (_id !== "__v") { //Skips adding version to the table
-                        let cell = row.insertCell();
-                        let text = document.createTextNode(element[_id]);
+                    if (_id !== "__v") { //adds Text to the table
+                        let cell = row.insertCell(); // table cell
+                        let text = document.createTextNode(element[_id]); // text to go into cell
                         cell.appendChild(text);
                     }
-                    else{
+                    else{ //Adds ID select radio buttons to the last column of the table
                         
-                        let x = 
+                        let x = //new radio button
                         <input
                         id = {element._id + numID}
                         class= "radioID"
                         type="radio"
                         name = "id"
                         />
-                        let c = row.insertCell();
+                        let c = row.insertCell(); //table cell
                         ReactDOM.render(x,c);
                     }
                 }
@@ -186,26 +186,27 @@ export default class Admin extends React.Component {
     }
 
 
-
+    //this function checks which radio button has been pressed and fills in the edit data ID text feild with the selected ID
     radioButton = () =>{
         console.log("2");
-        for(let element of globalData){
-            if(document.getElementById(element._id+0).checked){
+        for(let element of globalData){ // for table sorted Oldest to Newest, go through each button and find which one is checked
+            if(document.getElementById(element._id+0).checked){// if a sepcific radio button is pressed, fill in the ID
                 document.getElementById("inputId").value = element._id
                 this.state.id = element._id
             }
         }
-        for(let element of globalData){
-            if(document.getElementById(element._id+1).checked){
+        for(let element of globalData){// for table sorted Newest to Oldest, go through each button and find which one is checked
+            if(document.getElementById(element._id+1).checked){// if a sepcific radio button is pressed, fill in the ID
                 document.getElementById("inputId").value = element._id
                 this.state.id = element._id
             }
         }
     }
 
+    //If a mouse click occurs, this will trigger the radioButton function which checks and acts on if a radio button has been pressed
     componentDidMount(){
         window.addEventListener('click', (event) => {
-            this.radioButton();
+            this.radioButton();// call function above
           });
         }
 
