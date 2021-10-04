@@ -102,11 +102,10 @@ export default class Contact extends React.Component {
         
         //if the submit button is pressed when the ReCaptcha is hidden, it will be displayed with a message indicated the user to complete it
         if (keep === "hidden") {
-            //if ReCaptcha is not already complete if will display the please complete message
+            //if ReCaptcha is not already complete it will display the please complete message
             if(!recapVal){
                 this.setState({ good: "Please complete the reCAPTCHA"});
             }
-            console.log("hello " + keep);
             keep = "visible";
             x.style.visibility = "visible";
            
@@ -122,7 +121,6 @@ export default class Contact extends React.Component {
                 this.setState({ good: ""});
                 this.setState({ message: ""});
                 this.sendData(this.state.name, this.state.email, this.state.tel, this.state.mes);
-                console.log("sent data");
                 this.resetCaptcha();
                 x.style.visibility = "hidden";
                 keep = "hidden";
