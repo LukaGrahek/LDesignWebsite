@@ -1,5 +1,5 @@
 # LDesignWebsite
-A website made to demonstrate the portfolio of an interior designer"L" and store client information by Alex Tsarapkine and Luka Grahek
+A website made to demonstrate the portfolio of a sample interior designer "L" and store client information by Alex Tsarapkine and Luka Grahek
 
 Built on React using Node, Express, MongoDB, Google's ReCaptcha API, and more.
 
